@@ -18,6 +18,8 @@ android {
         versionName "1.0"
 
         buildConfigField "String", "CHATGPT_API_KEY", properties['gpt.api.key']
+        buildConfigField "String", "CHATGPT_API_MODEL", properties['gpt.model']
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
