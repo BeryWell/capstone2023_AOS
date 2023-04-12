@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.lifecycle.Observer
 import com.example.fitfume.BuildConfig
 import com.example.fitfume.databinding.ActivityMainBinding
 import com.example.fitfume.model.GptContent
@@ -34,5 +35,9 @@ class MainActivity : AppCompatActivity() {
 
             viewModel.getChatAnswer(request)
         }
+
+        viewModel.gptText.observe(this, Observer {
+            binding.sendTx.text = it
+        })
     }
 }
