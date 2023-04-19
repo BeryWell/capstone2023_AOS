@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Fitfume</string>
+    <string name="email_context">이메일</string>
+    <string name="pw_context">비밀번호</string>
+    <string name="search_Id">아이디 찾기</string>
+    <string name="search_pw">비밀번호 찾기</string>
+    <string name="sign_up_btn">회원가입하기</string>
+    <string name="login_btn">로그인 하기</string>
+    <string name="login_kakao_btn">카카오 로그인</string>
+    <string name="login_seach_slash">/</string>
 </resources>
