@@ -4,4 +4,13 @@
     <string name="recommend_title">Recommend</string>
     <string name="search_title">Search</string>
     <string name="my_title">My</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="campsite_event_banner_count">7</string>
+    <string name="campsite_event_banner_default">1</string>
+    <string name="event_banner_count_slash">&#160;/&#160;</string>
+    <string name="home_search_title">사진으로 향수 찾기</string>
+    <string name="home_search_description">사진 하나만 있으면\n원하는 향수를 찾을 수 있어요!</string>
+    <string name="home_best_perfume">🔥 베스트 향수 10 🔥</string>
+    <string name="home_new_perfume">🌱신상 향수 🌱</string>
 </resources>

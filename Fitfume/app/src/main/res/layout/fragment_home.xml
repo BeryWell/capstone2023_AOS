@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="fitfume"
+            type="com.example.fitfume.view.HomeFragment" />
+
+        <variable
+            name="fitfumeVm"
+            type="com.example.fitfume.viewmodel.FitfumeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/light_grey"
+        tools:context=".view.HomeFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cs_event_banner_cl"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.29"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/cs_event_banner_vp"
+                cs_event_setCVm="@{fitfumeVm}"
+                cs_event_setCount="@{csEventBannerCountTv}"
+                cs_event_setLeftBtn="@{csEventBannerLeftBtn}"
+                cs_event_setRightBtn="@{csEventBannerRightBtn}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </androidx.viewpager2.widget.ViewPager2>
+
+            <Button
+                android:id="@+id/cs_event_banner_left_btn"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:minWidth="10dp"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/cs_event_banner_right_btn"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:minWidth="10dp"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cs_event_banner_count_cl"
+                android:layout_width="42dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/event_banner_count_constraint_drawable"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <TextView
+                    android:id="@+id/cs_event_banner_count_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/campsite_event_banner_default"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@+id/cs_event_banner_count_symbol"
+                    app:layout_constraintEnd_toStartOf="@+id/cs_event_banner_count_symbol"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/cs_event_banner_count_symbol"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/event_banner_count_slash"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@+id/cs_event_banner_count_tt_tv"
+                    app:layout_constraintEnd_toStartOf="@+id/cs_event_banner_count_tt_tv"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/cs_event_banner_count_tv" />
+
+                <TextView
+                    android:id="@+id/cs_event_banner_count_tt_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/campsite_event_banner_count"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/cs_event_banner_count_symbol"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/home_search_cl"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintWidth_percent="0.862"
+            app:layout_constraintHeight_percent="0.145"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/home_search_background_drawable"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cs_event_banner_cl">
+
+            <TextView
+                android:id="@+id/home_search_title_tv"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintWidth_percent="0.368"
+                app:layout_constraintHeight_percent="0.25"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/home_search_title"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="1dp"
+                android:autoSizeStepGranularity="1dp"
+                android:autoSizeMaxTextSize="17dp"
+                android:gravity="center_vertical"
+                android:fontFamily="@font/pretendard_bold"
+                android:textColor="@color/white"
+                android:lineSpacingExtra="3dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/home_search_description_tv"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintWidth_percent="0.35"
+                app:layout_constraintHeight_percent="0.33"
+                android:text="@string/home_search_description"
+                android:textColor="@color/white"
+                android:fontFamily="@font/pretendard_medium"
+                android:autoSizeMaxTextSize="11dp"
+                android:autoSizeStepGranularity="1dp"
+                android:autoSizeMinTextSize="1dp"
+                android:autoSizeTextType="uniform"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical"
+                android:lineSpacingExtra="4dp"
+                app:layout_constraintStart_toStartOf="@+id/home_search_title_tv"
+                app:layout_constraintTop_toBottomOf="@+id/home_search_title_tv" />
+
+            <ImageView
+                android:layout_width="0dp"
+                app:layout_constraintWidth_percent="0.229"
+                app:layout_constraintHeight_percent="0.792"
+                android:adjustViewBounds="true"
+                android:layout_height="0dp"
+                android:src="@drawable/home_search_img"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/home_best_perfume_tv"
+            android:layout_width="0dp"
+            app:layout_constraintWidth_percent="0.3"
+            app:layout_constraintHeight_percent="0.03"
+            android:layout_height="0dp"
+            android:text="@string/home_best_perfume"
+            android:textColor="@color/black"
+            android:autoSizeMaxTextSize="14dp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="1dp"
+            android:autoSizeStepGranularity="1dp"
+            android:fontFamily="@font/pretendard_semibold"
+            android:layout_marginTop="15dp"
+            app:layout_constraintStart_toStartOf="@+id/home_search_cl"
+            app:layout_constraintTop_toBottomOf="@+id/home_search_cl"/>
+        
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/home_best_perfume_rv"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintWidth_percent="0.931"
+            app:layout_constraintHeight_percent="0.25"
+            android:layout_marginTop="5dp"
+            tools:listitem="@layout/item_best_perfume"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/home_best_perfume_tv"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

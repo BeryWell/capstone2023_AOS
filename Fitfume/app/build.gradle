@@ -3,6 +3,8 @@ plugins {
     id 'org.jetbrains.kotlin.android'
 }
 
+apply plugin: 'kotlin-kapt'
+
 android {
     namespace 'com.example.fitfume'
     compileSdk 32
@@ -65,7 +67,11 @@ dependencies {
     //coroutine
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1'
 
-//Jetpack Navigation
+    //Jetpack Navigation
     implementation "androidx.navigation:navigation-fragment-ktx:2.5.2"
     implementation "androidx.navigation:navigation-ui-ktx:2.5.2"
+
+    //viewPager2
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 }

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="home"
             type="com.example.fitfume.view.HomeActivity" />
@@ -34,25 +34,35 @@
                 android:src="@drawable/icon_app_title_drawable" />
         </androidx.appcompat.widget.Toolbar>
 
-        <androidx.core.widget.NestedScrollView
-            android:id="@+id/home_content_sv"
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/home_content_cl"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:fillViewport="true"
             app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/home_toolbar">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/home_main_cl"
+            <FrameLayout
+                android:id="@+id/fl_container"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/light_grey">
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
+                <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/navi_host"
+                    android:name="androidx.navigation.fragment.NavHostFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:defaultNavHost="true"
+                    app:navGraph="@navigation/nav_graph" />
+            </FrameLayout>
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.core.widget.NestedScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -60,11 +70,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:elevation="10dp"
-            app:labelVisibilityMode="labeled"
+            app:itemIconTint="@drawable/menu_selector_drawable"
             app:itemTextAppearanceActive="@style/navigationActiveTextTheme"
             app:itemTextAppearanceInactive="@style/navigationInActiveTextTheme"
-            app:itemTextColor="@color/black"
-            app:itemIconTint="@color/main_Color"
+            app:itemTextColor="@drawable/menu_selector_drawable"
+            app:labelVisibilityMode="labeled"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
