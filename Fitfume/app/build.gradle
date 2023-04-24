@@ -75,5 +75,4 @@ dependencies {
     //viewModel lifeCycle
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
 
-
 }
