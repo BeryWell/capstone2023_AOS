@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.viewModels
+import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.setFragmentResultListener
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -18,19 +20,26 @@ import com.example.fitfume.viewmodel.GptViewModel
 
 class RecommendEndFragment : Fragment() {
     private lateinit var binding: FragmentRecommendEndBinding
-    private val viewModel: GptViewModel by viewModels()
+    private val viewModel: GptViewModel by activityViewModels()
     var result = ""
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentRecommendEndBinding.inflate(inflater, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_recommend_end, container, false)
         binding.gptVm = viewModel
 
-        setFragmentResultListener("q4Key") { requestKey, bundle ->
-            result = bundle.getString("bundleKey")!!
-            Log.d("lhj", "onCreateView: ${result}")
+//        setFragmentResultListener("q4Key") { requestKey, bundle ->
+//            result = bundle.getString("bundleKey")!!
+//            Log.d("lhj", "onCreateView: ${result}")
+//        }
+
+        Log.d("lhj", "End: ${viewModel.recommendText.value}")
+
+        binding.recommendEndBtn.setOnClickListener {
+            viewModel.updateRecommendText("")
+            (activity as RecommendActivity).replaceFragment(RecommendQ1Fragment())
         }
 
         return binding.root
@@ -38,14 +47,20 @@ class RecommendEndFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        sendChatGPT(result)
-
+        sendChatGPT(viewModel.recommendText.value!!)
 
         viewModel.gptText.observe(requireActivity(), Observer {
-            binding.recommendEndPerfumeTv.text = it
+            val strArr = it.split(" - ")
+            binding.recommendEndPerfumeTv.text = strArr[0]
+            binding.recommendEndPerfumeDetailTv.text = strArr[1]
             Log.d("lhj", "receive GPT: ${it}")
         })
 
+    }
+
+    override fun onPause() {
+        super.onPause()
+        viewModel.gptText.removeObservers(this)
     }
 
     fun sendChatGPT(str: String) {
@@ -63,6 +78,6 @@ class RecommendEndFragment : Fragment() {
         )
 
         viewModel.getChatAnswer(request)
-
     }
+
 }

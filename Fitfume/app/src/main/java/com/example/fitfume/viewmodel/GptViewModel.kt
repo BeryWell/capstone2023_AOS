@@ -16,6 +16,16 @@ class GptViewModel : ViewModel(){
     val gptText: LiveData<String>
         get() = _gptText
 
+
+    private var _recommendText = MutableLiveData<String>()
+    val recommendText: LiveData<String>
+        get() = _recommendText
+
+
+    init{
+        _recommendText.value = ""
+    }
+
     @SuppressLint("CheckResult")
     fun getChatAnswer(request: GptRequest){
         gptRepository.getChatAnswer(request).subscribeBy (
@@ -27,4 +37,9 @@ class GptViewModel : ViewModel(){
                 it.printStackTrace()
             })
     }
+
+    fun updateRecommendText(str: String){
+        _recommendText.value = str
+    }
+
 }

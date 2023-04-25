@@ -7,7 +7,7 @@
 
         <variable
             name="gpt"
-            type="com.example.fitfume.view.MainActivity" />
+            type="com.example.fitfume.view.RecommendEndFragment" />
 
         <variable
             name="gptVm"
@@ -74,7 +74,7 @@
                     android:autoSizeTextType="uniform"
                     android:fontFamily="@font/pretendard_semibold"
                     android:gravity="center_vertical|center_horizontal"
-                    android:text="Dior"
+                    android:text="추천중입니다"
                     android:textColor="@color/black"
                     app:layout_constraintBottom_toTopOf="@+id/recommend_end_perfume_detail_tv"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -91,8 +91,9 @@
                     android:autoSizeStepGranularity="1dp"
                     android:autoSizeTextType="uniform"
                     android:fontFamily="@font/pretendard_medium"
-                    android:text="미스 디올 블루밍 부케 오 드 뚜왈렛"
+                    android:text=""
                     android:textColor="@color/black"
+                    android:gravity="center_horizontal|center_vertical"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHeight_percent="0.211"
