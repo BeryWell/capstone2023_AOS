@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/app_logo_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.LogoActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/app_logo_iv"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.191"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.108"
+        android:adjustViewBounds="true"
+        android:src="@drawable/icon_app_logo_drawable"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
