@@ -21,7 +21,6 @@ import com.example.fitfume.viewmodel.GptViewModel
 class RecommendEndFragment : Fragment() {
     private lateinit var binding: FragmentRecommendEndBinding
     private val viewModel: GptViewModel by activityViewModels()
-    var result = ""
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,11 +28,6 @@ class RecommendEndFragment : Fragment() {
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_recommend_end, container, false)
         binding.gptVm = viewModel
-
-//        setFragmentResultListener("q4Key") { requestKey, bundle ->
-//            result = bundle.getString("bundleKey")!!
-//            Log.d("lhj", "onCreateView: ${result}")
-//        }
 
         Log.d("lhj", "End: ${viewModel.recommendText.value}")
 

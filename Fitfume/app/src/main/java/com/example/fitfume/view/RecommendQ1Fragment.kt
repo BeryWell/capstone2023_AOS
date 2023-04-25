@@ -26,15 +26,11 @@ class RecommendQ1Fragment : Fragment() {
         binding.gptVm = viewModel
 
         binding.recommendManCl.setOnClickListener {
-//            val result = "남성"
-//            setFragmentResult("q1Key", bundleOf("bundleKey" to result))
             viewModel.updateRecommendText("남성")
             (activity as RecommendActivity).replaceFragment(RecommendQ2Fragment())
         }
 
         binding.recommendTwoCl.setOnClickListener {
-//            val result = "여성"
-//            setFragmentResult("q1Key", bundleOf("bundleKey" to result))
             viewModel.updateRecommendText("여성")
             (activity as RecommendActivity).replaceFragment(RecommendQ2Fragment())
         }

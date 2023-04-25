@@ -22,26 +22,18 @@ class RecommendQ2Fragment : Fragment() {
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_recommend_q2, container, false)
         binding.gptVm = viewModel
-        var result = ""
+        var result: String
 
-//        setFragmentResultListener("q1Key"){requestKey, bundle ->
-//            result = bundle.getString("bundleKey")!!
-//            Log.d("lhj", "Q2: ${result}")
-//        }
 
         Log.d("lhj", "Q2: ${viewModel.recommendText.value}")
 
         binding.recommendOneCl.setOnClickListener {
-//            result = "${result},캐주얼"
-//            setFragmentResult("q2Key", bundleOf("bundleKey" to result))
             result = "${viewModel.recommendText.value},캐주얼"
             viewModel.updateRecommendText(result)
             (activity as RecommendActivity).replaceFragment(RecommendQ3Fragment())
         }
 
         binding.recommendTwoCl.setOnClickListener {
-//            result = "${result},스트릿"
-//            setFragmentResult("q2Key", bundleOf("bundleKey" to result))
             result = "${viewModel.recommendText.value},스트릿"
             viewModel.updateRecommendText(result)
             (activity as RecommendActivity).replaceFragment(RecommendQ3Fragment())
@@ -49,16 +41,12 @@ class RecommendQ2Fragment : Fragment() {
 
 
         binding.recommendThreeCl.setOnClickListener {
-//            result = "${result},미니멀"
-//            setFragmentResult("q2Key", bundleOf("bundleKey" to result))
             result = "${viewModel.recommendText.value},미니멀"
             viewModel.updateRecommendText(result)
             (activity as RecommendActivity).replaceFragment(RecommendQ3Fragment())
         }
 
         binding.recommendFourCl.setOnClickListener {
-//            result = "${result},정장"
-//            setFragmentResult("q2Key", bundleOf("bundleKey" to result))
             result = "${viewModel.recommendText.value},정장"
             viewModel.updateRecommendText(result)
             (activity as RecommendActivity).replaceFragment(RecommendQ3Fragment())

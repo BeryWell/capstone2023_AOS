@@ -23,26 +23,17 @@ class RecommendQ3Fragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_recommend_q3, container, false)
         binding.gptVm = viewModel
 
-        var result = ""
-
-//        setFragmentResultListener("q2Key"){requestKey, bundle ->
-//            result = bundle.getString("bundleKey")!!
-//            Log.d("lhj", "Q3: ${result}")
-//        }
+        var result: String
 
         Log.d("lhj", "Q3: ${viewModel.recommendText.value}")
 
         binding.recommendOneCl.setOnClickListener {
-//            result = "${result},내향적"
-//            setFragmentResult("q3Key", bundleOf("bundleKey" to result))
             result = "${viewModel.recommendText.value},내향적"
             viewModel.updateRecommendText(result)
             (activity as RecommendActivity).replaceFragment(RecommendQ4Fragment())
         }
 
         binding.recommendTwoCl.setOnClickListener {
-//            result = "${result},외향적"
-//            setFragmentResult("q3Key", bundleOf("bundleKey" to result))
             result = "${viewModel.recommendText.value},외향적"
             viewModel.updateRecommendText(result)
             (activity as RecommendActivity).replaceFragment(RecommendQ4Fragment())
