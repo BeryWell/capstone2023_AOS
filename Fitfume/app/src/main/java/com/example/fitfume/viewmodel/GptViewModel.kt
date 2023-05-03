@@ -17,13 +17,17 @@ class GptViewModel : ViewModel(){
         get() = _gptText
 
 
-    private var _recommendText = MutableLiveData<String>()
-    val recommendText: LiveData<String>
-        get() = _recommendText
+    private var _recommendTextArr = MutableLiveData<MutableList<String>>()
+    val recommendTextArr: LiveData<MutableList<String>>
+        get() = _recommendTextArr
 
+    private var _recommendStateText = MutableLiveData<String>()
+    val recommendStateText: LiveData<String>
+        get() = _recommendStateText
 
     init{
-        _recommendText.value = ""
+        _recommendTextArr.value = mutableListOf()
+        _recommendStateText.value = ""
     }
 
     @SuppressLint("CheckResult")
@@ -38,8 +42,20 @@ class GptViewModel : ViewModel(){
             })
     }
 
-    fun updateRecommendText(str: String){
-        _recommendText.value = str
+    fun updateRecommendTextArr(str: String){
+        _recommendTextArr.value!!.add(str)
+    }
+
+    fun deleteRecommendTextArr(){
+        _recommendTextArr.value!!.removeAt(_recommendTextArr.value!!.size - 1)
+    }
+
+    fun resetRecommendTextArr(){
+        _recommendTextArr.value!!.clear()
+    }
+
+    fun updateRecommendStateText(value: String){
+        _recommendStateText.value = value
     }
 
 }

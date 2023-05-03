@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.*
+import androidx.lifecycle.Observer
 import com.example.fitfume.R
 import com.example.fitfume.databinding.FragmentRecommendQ3Binding
 import com.example.fitfume.viewmodel.GptViewModel
@@ -23,23 +24,52 @@ class RecommendQ3Fragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_recommend_q3, container, false)
         binding.gptVm = viewModel
 
-        var result: String
-
-        Log.d("lhj", "Q3: ${viewModel.recommendText.value}")
+        Log.d("lhj", "Q3: ${viewModel.recommendTextArr.value}")
 
         binding.recommendOneCl.setOnClickListener {
-            result = "${viewModel.recommendText.value},내향적"
-            viewModel.updateRecommendText(result)
-            (activity as RecommendActivity).replaceFragment(RecommendQ4Fragment())
+            viewModel.updateRecommendStateText("내향적")
         }
 
         binding.recommendTwoCl.setOnClickListener {
-            result = "${viewModel.recommendText.value},외향적"
-            viewModel.updateRecommendText(result)
+            viewModel.updateRecommendStateText("외향적")
+        }
+
+        viewModel.recommendStateText.observe(requireActivity(), Observer {
+            when(it){
+                "내향적" -> {
+                    updateSelected(arrayListOf(true, false))
+                }
+                "외향적" -> {
+                    updateSelected(arrayListOf(false, true))
+                }else -> {
+                updateSelected(arrayListOf(false, false))
+                }
+
+            }
+        })
+
+        binding.recommendNextBtn.setOnClickListener {
+            viewModel.updateRecommendTextArr(viewModel.recommendStateText.value!!)
             (activity as RecommendActivity).replaceFragment(RecommendQ4Fragment())
         }
 
+        binding.recommendPreviewBtn.setOnClickListener {
+            viewModel.deleteRecommendTextArr()
+            (activity as RecommendActivity).replaceFragment(RecommendQ2Fragment())
+        }
+
         return binding.root
+    }
+
+    private fun updateSelected(booleanArr: List<Boolean>) {
+        binding.recommendOneCl.isSelected = booleanArr[0]
+        binding.recommendTwoCl.isSelected = booleanArr[1]
+    }
+
+    override fun onPause() {
+        super.onPause()
+
+        viewModel.recommendStateText.removeObservers(this)
     }
 
 }

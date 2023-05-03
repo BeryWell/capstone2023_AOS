@@ -29,10 +29,10 @@ class RecommendEndFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_recommend_end, container, false)
         binding.gptVm = viewModel
 
-        Log.d("lhj", "End: ${viewModel.recommendText.value}")
+        Log.d("lhj", "End: ${viewModel.recommendTextArr.value}")
 
         binding.recommendEndBtn.setOnClickListener {
-            viewModel.updateRecommendText("")
+            viewModel.resetRecommendTextArr()
             (activity as RecommendActivity).replaceFragment(RecommendQ1Fragment())
         }
 
@@ -41,10 +41,15 @@ class RecommendEndFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        sendChatGPT(viewModel.recommendText.value!!)
+
+        binding.recommendEndPerfumeTv.text = "추천중입니다."
+        binding.recommendEndPerfumeDetailTv.text = ""
+
+        sendChatGPT(viewModel.recommendTextArr.value!!)
 
         viewModel.gptText.observe(requireActivity(), Observer {
             val strArr = it.split(" - ")
+
             binding.recommendEndPerfumeTv.text = strArr[0]
             binding.recommendEndPerfumeDetailTv.text = strArr[1]
             Log.d("lhj", "receive GPT: ${it}")
@@ -54,19 +59,18 @@ class RecommendEndFragment : Fragment() {
 
     override fun onPause() {
         super.onPause()
+
         viewModel.gptText.removeObservers(this)
     }
 
-    fun sendChatGPT(str: String) {
-        val strArr = str.split(",").map { it.toString() }
-
+    fun sendChatGPT(textArr: List<String>) {
         val model = "gpt-3.5-turbo"
         val request = GptRequest(
             model,
             listOf(
                 GptContent(
                     "user",
-                    "\"${strArr[1]} 스타일 옷을 입는 ${strArr[3]} ${strArr[0]} ${strArr[2]}인 사람\" 향수 추천해줘. 근데 향수 이름은 한글로 말해줘. 그리고 기타 설명은 적지말고 \"브랜드 - 향수이름\" 으로 딱 하나만 알려줘."
+                    "\"${textArr[1]} 스타일 옷을 입는 ${textArr[3]} ${textArr[0]} ${textArr[2]}인 사람\" 향수 추천해줘. 근데 향수 이름은 한글로 말해줘. 그리고 기타 설명은 적지말고 \"브랜드 - 향수이름\" 으로 딱 하나만 알려줘."
                 )
             )
         )
