@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/light_grey"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".item_my_review">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.862"
+        app:layout_constraintDimensionRatio="1:0.396"
+        android:elevation="2dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="18dp"
+        android:background="@drawable/login_background_drawable"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/review_user_nickname_tv"
+            android:layout_width="0dp"
+            app:layout_constraintWidth_percent="0.1"
+            app:layout_constraintHeight_percent="0.13"
+            android:layout_height="0dp"
+            android:fontFamily="@font/pretendard_semibold"
+            android:textColor="@color/black"
+            android:autoSizeStepGranularity="1dp"
+            android:autoSizeMinTextSize="1dp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMaxTextSize="12dp"
+            android:lineSpacingExtra="8sp"
+            android:text="lh99j"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="@+id/review_division"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/review_perfume_info_cl"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/review_division"
+            app:layout_constraintHeight_percent="0.09"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.23">
+
+            <TextView
+                android:id="@+id/review_perfume_brand_tv"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:autoSizeMaxTextSize="9dp"
+                android:autoSizeMinTextSize="1dp"
+                android:autoSizeStepGranularity="1dp"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/pretendard_medium"
+                android:text="Dior"
+                android:textColor="@color/review_perfume_name"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/review_perfume_division"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.2" />
+
+
+            <View
+                android:id="@+id/review_perfume_division"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/division_grey"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/review_perfume_name_tv"
+                app:layout_constraintStart_toEndOf="@id/review_perfume_brand_tv"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/review_perfume_name_tv"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:autoSizeMaxTextSize="9dp"
+                android:autoSizeMinTextSize="1dp"
+                android:autoSizeStepGranularity="1dp"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/pretendard_medium"
+                android:text="쟈도르 오드 퍼퓸"
+                android:textColor="@color/review_perfume_name"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/review_perfume_division"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.676" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/review_user_info_cl"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="2dp"
+            app:layout_constraintHeight_percent="0.073"
+            app:layout_constraintStart_toStartOf="@+id/review_division"
+            app:layout_constraintTop_toBottomOf="@+id/review_user_nickname_tv"
+            app:layout_constraintWidth_percent="0.21">
+
+            <TextView
+                android:id="@+id/review_user_sex_tv"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:autoSizeMaxTextSize="9dp"
+                android:autoSizeMinTextSize="1dp"
+                android:autoSizeStepGranularity="1dp"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/pretendard_medium"
+                android:gravity="center_horizontal"
+                android:lineSpacingExtra="11sp"
+                android:text="여성"
+                android:textColor="@color/review_perfume_name"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/review_user_slash1_tv"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.185" />
+
+            <TextView
+                android:id="@+id/review_user_slash1_tv"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:autoSizeMaxTextSize="9dp"
+                android:autoSizeMinTextSize="1dp"
+                android:autoSizeStepGranularity="1dp"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/pretendard_medium"
+                android:gravity="center_horizontal"
+                android:lineSpacingExtra="11sp"
+                android:text="@string/slash"
+                android:textColor="@color/review_perfume_name"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/review_user_job_tv"
+                app:layout_constraintStart_toEndOf="@+id/review_user_sex_tv"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.031" />
+
+            <TextView
+                android:id="@+id/review_user_job_tv"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:autoSizeMaxTextSize="9dp"
+                android:autoSizeMinTextSize="1dp"
+                android:autoSizeStepGranularity="1dp"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/pretendard_medium"
+                android:gravity="center_horizontal"
+                android:lineSpacingExtra="11sp"
+                android:text="직장인"
+                android:textColor="@color/review_perfume_name"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/review_user_slash2_tv"
+                app:layout_constraintStart_toEndOf="@+id/review_user_slash1_tv"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.277" />
+
+            <TextView
+                android:id="@+id/review_user_slash2_tv"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:autoSizeMaxTextSize="9dp"
+                android:autoSizeMinTextSize="1dp"
+                android:autoSizeStepGranularity="1dp"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/pretendard_medium"
+                android:gravity="center_horizontal"
+                android:lineSpacingExtra="11sp"
+                android:text="@string/slash"
+                android:textColor="@color/review_perfume_name"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/review_user_style_tv"
+                app:layout_constraintStart_toEndOf="@+id/review_user_job_tv"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.031" />
+
+            <TextView
+                android:id="@+id/review_user_style_tv"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:autoSizeMaxTextSize="9dp"
+                android:autoSizeMinTextSize="1dp"
+                android:autoSizeStepGranularity="1dp"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/pretendard_medium"
+                android:lineSpacingExtra="11sp"
+                android:text="클래식"
+                android:textColor="@color/review_perfume_name"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/review_user_slash2_tv"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.277" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        
+        <View
+            android:id="@+id/review_division"
+            android:layout_width="0dp"
+            app:layout_constraintWidth_percent="0.929"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="13dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/review_user_info_cl"/>
+
+
+        <TextView
+            android:id="@+id/review_user_write_tv"
+            android:layout_width="0dp"
+            app:layout_constraintWidth_percent="0.7"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.512"
+            android:autoSizeMaxTextSize="11dp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="1dp"
+            android:autoSizeStepGranularity="1dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/review_temp_text"
+            android:fontFamily="@font/pretendard_medium"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@+id/review_division"
+            app:layout_constraintTop_toBottomOf="@+id/review_division"/>
+
+
+        <TextView
+            android:id="@+id/reivew_date_tv"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="2023.04.19"
+            android:fontFamily="@font/pretendard_medium"
+            android:textColor="@color/review_perfume_name"
+            android:autoSizeStepGranularity="1dp"
+            android:autoSizeMinTextSize="1dp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMaxTextSize="9dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_horizontal"
+            app:layout_constraintWidth_percent="0.11"
+            app:layout_constraintHeight_percent="0.07"
+            app:layout_constraintEnd_toEndOf="@id/review_division"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

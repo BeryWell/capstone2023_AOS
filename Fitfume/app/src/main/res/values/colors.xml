@@ -11,6 +11,9 @@
     <color name="yellow">#FEE500</color>
     <color name="light_grey">#f7f7f7</color>
     <color name="grey">#777777</color>
+    <color name="review_perfume_name">#504d48</color>
+    <color name="division_grey">#e5e5e5</color>
+    <color name="email_grey">#746954</color>
     <color name="count_grey">#919191</color>
     <color name="temp0">#FC8385</color>
     <color name="temp1">#F9AF81</color>
