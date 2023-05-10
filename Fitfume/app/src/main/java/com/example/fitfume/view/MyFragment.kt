@@ -34,10 +34,12 @@ class MyFragment : Fragment() {
         binding.myReviewRv.adapter = bestPerfumeRecyclerViewAdapter
 
         var list: MutableList<PerfumeReviewEvent> = mutableListOf()
-        list.add(PerfumeReviewEvent("lh99j"))
-        list.add(PerfumeReviewEvent("lh99j"))
-        list.add(PerfumeReviewEvent("lh99j"))
-        list.add(PerfumeReviewEvent("lh99j"))
+        list.add(PerfumeReviewEvent("lh99j", 0.0F))
+        list.add(PerfumeReviewEvent("lh99j", 1.0F))
+        list.add(PerfumeReviewEvent("lh99j", 2.0F))
+        list.add(PerfumeReviewEvent("lh99j", 3.0F))
+        list.add(PerfumeReviewEvent("lh99j", 4.0F))
+        list.add(PerfumeReviewEvent("lh99j", 5.0F))
 
 
         bestPerfumeRecyclerViewAdapter.submitBestPerfumeEventList(list)

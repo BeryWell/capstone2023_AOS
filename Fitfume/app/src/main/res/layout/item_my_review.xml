@@ -24,7 +24,7 @@
         <TextView
             android:id="@+id/review_user_nickname_tv"
             android:layout_width="0dp"
-            app:layout_constraintWidth_percent="0.1"
+            app:layout_constraintWidth_percent="0.09"
             app:layout_constraintHeight_percent="0.13"
             android:layout_height="0dp"
             android:fontFamily="@font/pretendard_semibold"
@@ -38,6 +38,21 @@
             android:layout_marginTop="10dp"
             app:layout_constraintStart_toStartOf="@+id/review_division"
             app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatRatingBar
+            android:id="@+id/review_user_star_rb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintWidth_percent="0.15"
+            app:layout_constraintHeight_percent="0.086"
+            android:numStars="5"
+            android:isIndicator="true"
+            android:progressTint="@color/star_yellow"
+            android:layout_marginStart="6dp"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            app:layout_constraintStart_toEndOf="@+id/review_user_nickname_tv"
+            app:layout_constraintTop_toTopOf="@+id/review_user_nickname_tv"
+            app:layout_constraintBottom_toBottomOf="@+id/review_user_nickname_tv"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/review_perfume_info_cl"
