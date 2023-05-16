@@ -30,4 +30,5 @@
     <color name="app_logo_background">#384B43</color>
     <color name="light_grey">#f7f7f7</color>
     <color name="grey">#777777</color>
+    <color name="search_filter_color">#ededed</color>
 </resources>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="search"
             type="com.example.fitfume.view.SearchFragment" />
@@ -17,17 +17,412 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/light_grey"
         tools:context=".view.SearchFragment">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/search_find_perfume"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="getPerfuem"
-            app:layout_constraintBottom_toBottomOf="parent"
+
+        <EditText
+            android:id="@+id/search_perfume_word_et"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/search_bar_background"
+            android:elevation="2dp"
+            android:fontFamily="@font/pretendard_medium"
+            android:hint="@string/search_bar_hint"
+            android:inputType="textMultiLine|textNoSuggestions"
+            android:lineSpacingExtra="2dp"
+            android:maxLines="1"
+            android:paddingStart="15dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey"
+            android:textSize="11dp"
+            android:windowSoftInputMode="adjustNothing"
+            app:layout_constraintHeight_percent="0.067"
+            app:layout_constraintStart_toStartOf="@+id/search_filter_brand_cl"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.739" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/search_for_image_iv"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="25dp"
+            android:src="@drawable/icon_search_for_image_drawable"
+            app:layout_constraintBottom_toBottomOf="@+id/search_perfume_word_et"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/search_perfume_word_et"
+            app:layout_constraintTop_toTopOf="@+id/search_perfume_word_et" />
+
+        <View
+            android:id="@+id/search_division"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_marginTop="28.5dp"
+            android:background="@color/division_grey"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/search_perfume_word_et" />
+
+
+        <TextView
+            android:id="@+id/search_introduce_context_tv"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="18.5dp"
+            android:autoSizeMaxTextSize="13dp"
+            android:autoSizeMinTextSize="1dp"
+            android:autoSizeStepGranularity="1dp"
+            android:autoSizeTextType="uniform"
+            android:fontFamily="@font/pretendard_semibold"
+            android:lineSpacingExtra="2sp"
+            android:text="@string/search_intro_context"
+            android:textColor="@color/black"
+            app:layout_constraintHeight_percent="0.0265"
+            app:layout_constraintStart_toStartOf="@+id/search_filter_brand_cl"
+            app:layout_constraintTop_toBottomOf="@+id/search_division"
+            app:layout_constraintWidth_percent="0.5" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/search_filter_brand_cl"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.138"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/search_introduce_context_tv"
+            app:layout_constraintWidth_percent="0.862">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/search_filter_jomalron_btn"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:autoSizeMaxTextSize="12dp"
+                android:autoSizeMinTextSize="1dp"
+                android:autoSizeStepGranularity="1dp"
+                android:autoSizeTextType="uniform"
+                android:background="@drawable/search_filter_drawable"
+                android:elevation="2dp"
+                android:layout_marginStart="1dp"
+                android:fontFamily="@font/pretendard_medium"
+                android:lineSpacingExtra="6sp"
+                android:text="@string/jomalone"
+                android:textColor="@drawable/search_filter_text_color_change_drawable"
+                app:layout_constraintHeight_percent="0.397"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.258" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/search_filter_diptyque_btn"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="13dp"
+                android:autoSizeMaxTextSize="12dp"
+                android:autoSizeMinTextSize="1dp"
+                android:autoSizeStepGranularity="1dp"
+                android:autoSizeTextType="uniform"
+                android:background="@drawable/search_filter_drawable"
+                android:elevation="2dp"
+                android:fontFamily="@font/pretendard_medium"
+                android:lineSpacingExtra="6sp"
+                android:text="@string/diptyque"
+                android:textColor="@drawable/search_filter_text_color_change_drawable"
+                app:layout_constraintHeight_percent="0.397"
+                app:layout_constraintStart_toEndOf="@+id/search_filter_jomalron_btn"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.258" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/search_filter_channel_btn"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="13dp"
+                android:autoSizeMaxTextSize="12dp"
+                android:autoSizeMinTextSize="1dp"
+                android:autoSizeStepGranularity="1dp"
+                android:autoSizeTextType="uniform"
+                android:background="@drawable/search_filter_drawable"
+                android:elevation="2dp"
+                android:fontFamily="@font/pretendard_medium"
+                android:lineSpacingExtra="6sp"
+                android:text="@string/channel"
+                android:textColor="@drawable/search_filter_text_color_change_drawable"
+                app:layout_constraintHeight_percent="0.397"
+                app:layout_constraintStart_toEndOf="@+id/search_filter_diptyque_btn"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.258" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/search_filter_dior_btn"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="13dp"
+                android:autoSizeMaxTextSize="12dp"
+                android:autoSizeMinTextSize="1dp"
+                android:autoSizeStepGranularity="1dp"
+                android:autoSizeTextType="uniform"
+                android:background="@drawable/search_filter_drawable"
+                android:elevation="2dp"
+                android:fontFamily="@font/pretendard_medium"
+                android:lineSpacingExtra="6sp"
+                android:text="@string/dior"
+                android:textColor="@drawable/search_filter_text_color_change_drawable"
+                app:layout_constraintEnd_toStartOf="@+id/search_filter_lanvin_btn"
+                app:layout_constraintHeight_percent="0.397"
+                app:layout_constraintTop_toBottomOf="@+id/search_filter_jomalron_btn"
+                app:layout_constraintWidth_percent="0.258" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/search_filter_lanvin_btn"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="13dp"
+                android:autoSizeMaxTextSize="12dp"
+                android:autoSizeMinTextSize="1dp"
+                android:autoSizeStepGranularity="1dp"
+                android:autoSizeTextType="uniform"
+                android:background="@drawable/search_filter_drawable"
+                android:elevation="2dp"
+                android:fontFamily="@font/pretendard_medium"
+                android:lineSpacingExtra="6sp"
+                android:text="@string/lanvin"
+                android:textColor="@drawable/search_filter_text_color_change_drawable"
+                app:layout_constraintEnd_toStartOf="@+id/search_filter_gucci_btn"
+                app:layout_constraintHeight_percent="0.397"
+                app:layout_constraintTop_toBottomOf="@+id/search_filter_jomalron_btn"
+                app:layout_constraintWidth_percent="0.258" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/search_filter_gucci_btn"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="15dp"
+                android:autoSizeMaxTextSize="12dp"
+                android:autoSizeMinTextSize="1dp"
+                android:autoSizeStepGranularity="1dp"
+                android:autoSizeTextType="uniform"
+                android:background="@drawable/search_filter_drawable"
+                android:elevation="2dp"
+                android:layout_marginEnd="1dp"
+                android:fontFamily="@font/pretendard_medium"
+                android:lineSpacingExtra="6sp"
+                android:text="@string/gucci"
+                android:textColor="@drawable/search_filter_text_color_change_drawable"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.397"
+                app:layout_constraintTop_toBottomOf="@+id/search_filter_jomalron_btn"
+                app:layout_constraintWidth_percent="0.258" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <View
+            android:id="@+id/search_division2"
+            android:layout_width="0dp"
+            android:layout_height="0.7dp"
+            android:layout_marginTop="14.7dp"
+            app:layout_constraintTop_toBottomOf="@id/search_filter_brand_cl"
+            app:layout_constraintStart_toStartOf="@+id/search_filter_brand_cl"
+            app:layout_constraintEnd_toEndOf="@id/search_filter_brand_cl"
+            android:background="@color/division_grey"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/search_filter_weather_cl"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="14.7dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.055"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/search_division2"
+            app:layout_constraintWidth_percent="0.862">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/search_filter_spring_btn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:autoSizeMaxTextSize="12dp"
+                android:autoSizeMinTextSize="1dp"
+                android:layout_marginBottom="2dp"
+                android:layout_marginStart="1dp"
+                android:autoSizeStepGranularity="1dp"
+                android:autoSizeTextType="uniform"
+                android:background="@drawable/search_filter_drawable"
+                android:elevation="2dp"
+                android:fontFamily="@font/pretendard_medium"
+                android:lineSpacingExtra="6sp"
+                android:text="@string/spring"
+                android:textColor="@drawable/search_filter_text_color_change_drawable"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/search_filter_summer_btn"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.229" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/search_filter_summer_btn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:autoSizeMaxTextSize="12dp"
+                android:autoSizeMinTextSize="1dp"
+                android:autoSizeStepGranularity="1dp"
+                android:autoSizeTextType="uniform"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/search_filter_drawable"
+                android:elevation="2dp"
+                android:fontFamily="@font/pretendard_medium"
+                android:lineSpacingExtra="6sp"
+                android:text="@string/summer"
+                android:textColor="@drawable/search_filter_text_color_change_drawable"
+                app:layout_constraintEnd_toStartOf="@+id/search_filter_autumn_btn"
+                app:layout_constraintStart_toEndOf="@id/search_filter_spring_btn"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintWidth_percent="0.229" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/search_filter_autumn_btn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:autoSizeMaxTextSize="12dp"
+                android:autoSizeMinTextSize="1dp"
+                android:autoSizeStepGranularity="1dp"
+                android:autoSizeTextType="uniform"
+                android:background="@drawable/search_filter_drawable"
+                android:elevation="2dp"
+                android:layout_marginBottom="2dp"
+                android:fontFamily="@font/pretendard_medium"
+                android:lineSpacingExtra="6sp"
+                android:text="@string/autumn"
+                android:textColor="@drawable/search_filter_text_color_change_drawable"
+                app:layout_constraintEnd_toStartOf="@id/search_filter_winter_btn"
+                app:layout_constraintStart_toEndOf="@id/search_filter_summer_btn"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintWidth_percent="0.229" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/search_filter_winter_btn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:autoSizeMaxTextSize="12dp"
+                android:autoSizeMinTextSize="1dp"
+                android:autoSizeStepGranularity="1dp"
+                android:autoSizeTextType="uniform"
+                android:background="@drawable/search_filter_drawable"
+                android:elevation="2dp"
+                android:fontFamily="@font/pretendard_medium"
+                android:layout_marginBottom="2dp"
+                android:layout_marginEnd="1dp"
+                android:lineSpacingExtra="6sp"
+                android:text="@string/winter"
+                android:textColor="@drawable/search_filter_text_color_change_drawable"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/search_filter_autumn_btn"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintWidth_percent="0.229" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/search_division3"
+            android:layout_width="0dp"
+            android:layout_height="0.7dp"
+            android:layout_marginTop="14.7dp"
+            app:layout_constraintTop_toBottomOf="@id/search_filter_weather_cl"
+            app:layout_constraintStart_toStartOf="@+id/search_filter_brand_cl"
+            app:layout_constraintEnd_toEndOf="@id/search_filter_brand_cl"
+            android:background="@color/division_grey"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/search_filter_neutrality_btn"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:autoSizeMaxTextSize="12dp"
+            android:autoSizeMinTextSize="1dp"
+            android:autoSizeStepGranularity="1dp"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/search_filter_drawable"
+            android:elevation="2dp"
+            android:fontFamily="@font/pretendard_medium"
+            android:lineSpacingExtra="6sp"
+            android:layout_marginTop="14.7dp"
+            android:text="@string/neutrality"
+            android:textColor="@drawable/search_filter_text_color_change_drawable"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/search_division3"
+            app:layout_constraintWidth_percent="0.222"
+            app:layout_constraintHeight_percent="0.055"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/search_filter_man_btn"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:autoSizeMaxTextSize="12dp"
+            android:autoSizeMinTextSize="1dp"
+            android:autoSizeStepGranularity="1dp"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/search_filter_drawable"
+            android:elevation="2dp"
+            android:fontFamily="@font/pretendard_medium"
+            android:lineSpacingExtra="6sp"
+            android:layout_marginTop="14.7dp"
+            android:layout_marginStart="47dp"
+            android:text="@string/man"
+            android:textColor="@drawable/search_filter_text_color_change_drawable"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/search_division3"
+            app:layout_constraintWidth_percent="0.222"
+            app:layout_constraintHeight_percent="0.055"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/search_filter_woman_btn"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:autoSizeMaxTextSize="12dp"
+            android:autoSizeMinTextSize="1dp"
+            android:autoSizeStepGranularity="1dp"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/search_filter_drawable"
+            android:elevation="2dp"
+            android:fontFamily="@font/pretendard_medium"
+            android:layout_marginEnd="47dp"
+            android:lineSpacingExtra="6sp"
+            android:layout_marginTop="14.7dp"
+            android:text="@string/woman"
+            android:textColor="@drawable/search_filter_text_color_change_drawable"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/search_division3"
+            app:layout_constraintWidth_percent="0.222"
+            app:layout_constraintHeight_percent="0.055"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/search_go_to_result_btn"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="25dp"
+            android:autoSizeMaxTextSize="15dp"
+            android:autoSizeMinTextSize="1dp"
+            android:autoSizeStepGranularity="1dp"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/recommend_main_color_btn_drawable"
+            android:fontFamily="@font/pretendard_semibold"
+            android:text="@string/search"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.065"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintWidth_percent="0.862" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

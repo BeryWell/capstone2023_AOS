@@ -23,10 +23,29 @@ class SearchFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_search, container, false)
         binding.searchVm = viewModel
 
-        binding.searchFindPerfume.setOnClickListener {
-            viewModel.findAllPerfumes()
+        with(binding) {
+            toggleSelectionOnClick(searchFilterJomalronBtn)
+            toggleSelectionOnClick(searchFilterDiptyqueBtn)
+            toggleSelectionOnClick(searchFilterChannelBtn)
+            toggleSelectionOnClick(searchFilterDiorBtn)
+            toggleSelectionOnClick(searchFilterLanvinBtn)
+            toggleSelectionOnClick(searchFilterGucciBtn)
+            toggleSelectionOnClick(searchFilterSpringBtn)
+            toggleSelectionOnClick(searchFilterSummerBtn)
+            toggleSelectionOnClick(searchFilterAutumnBtn)
+            toggleSelectionOnClick(searchFilterWinterBtn)
+            toggleSelectionOnClick(searchFilterManBtn)
+            toggleSelectionOnClick(searchFilterNeutralityBtn)
+            toggleSelectionOnClick(searchFilterWomanBtn)
         }
+
         return binding.root
+    }
+
+    private fun toggleSelectionOnClick(button: View) {
+        button.setOnClickListener {
+            it.isSelected = !it.isSelected
+        }
     }
 
 }

@@ -42,4 +42,18 @@
     <string name="preview">이전</string>
     <string name="next">다음</string>
     <string name="go_to_main">메인 화면으로</string>
+    <string name="search_bar_hint">검색어를 입력하세요.</string>
+    <string name="search_intro_context">아래의 검색어를 눌러 쉽게 검색해보세요.</string>
+    <string name="jomalone">조말론</string>
+    <string name="diptyque">딥티크</string>
+    <string name="channel">샤넬</string>
+    <string name="dior">디올</string>
+    <string name="lanvin">랑방</string>
+    <string name="gucci">구찌</string>
+    <string name="spring">봄</string>
+    <string name="summer">여름</string>
+    <string name="autumn">가을</string>
+    <string name="winter">겨울</string>
+    <string name="neutrality">중성</string>
+    <string name="search">검색</string>
 </resources>
