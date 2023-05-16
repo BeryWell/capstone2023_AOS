@@ -1,4 +1,4 @@
-package com.example.fitfume.network
+package com.example.fitfume.network.chatgpt
 
 import android.util.Log
 import com.example.fitfume.BuildConfig

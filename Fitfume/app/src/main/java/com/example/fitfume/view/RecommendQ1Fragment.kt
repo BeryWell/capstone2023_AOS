@@ -51,7 +51,7 @@ class RecommendQ1Fragment : Fragment() {
                     binding.recommendManCl.isSelected = false
                     binding.recommendTwoCl.isSelected = false
                 }
-            } 
+            }
         })
 
         binding.recommendNextBtn.setOnClickListener {

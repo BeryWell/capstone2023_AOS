@@ -1,6 +1,6 @@
-package com.example.fitfume.network
+package com.example.fitfume.network.chatgpt
 
-import com.example.fitfume.network.c.C
+import com.example.fitfume.network.ApiInterface
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
