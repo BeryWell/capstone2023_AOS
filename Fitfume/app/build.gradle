@@ -5,16 +5,22 @@ plugins {
 
 apply plugin: 'kotlin-kapt'
 
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
 android {
     namespace 'com.example.fitfume'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.example.fitfume"
-        minSdk 21
-        targetSdk 32
+        minSdk 28
+        targetSdk 33
         versionCode 1
         versionName "1.0"
+
+        buildConfigField "String", "CHATGPT_API_KEY", properties['gpt.api.key']
+        buildConfigField "String", "CHATGPT_API_MODEL", properties['gpt.model']
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -26,11 +32,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = JavaVersion.VERSION_11.toString()
     }
     buildFeatures {
         viewBinding = true
@@ -46,6 +52,8 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+    implementation "androidx.activity:activity-ktx:1.6.0"
+    implementation 'androidx.fragment:fragment-ktx:1.5.3'
     //LiveData
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.5.1"
     // Gson
@@ -70,6 +78,9 @@ dependencies {
     //Jetpack Navigation
     implementation "androidx.navigation:navigation-fragment-ktx:2.5.2"
     implementation "androidx.navigation:navigation-ui-ktx:2.5.2"
+
+    //viewModel lifeCycle
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
 
     //viewPager2
     implementation 'androidx.viewpager2:viewpager2:1.0.0'

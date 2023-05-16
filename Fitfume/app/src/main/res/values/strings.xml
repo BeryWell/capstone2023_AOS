@@ -4,8 +4,6 @@
     <string name="recommend_title">Recommend</string>
     <string name="search_title">Search</string>
     <string name="my_title">My</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="campsite_event_banner_count">7</string>
     <string name="campsite_event_banner_default">1</string>
     <string name="event_banner_count_slash">&#160;/&#160;</string>
@@ -18,4 +16,30 @@
     <string name="slash">/</string>
     <string name="review_temp_text">동해물과 백두산이 마르고 닳도록\n하느님이 보우하사\n우리나라 만세\n무궁화 삼천리 화려강산\n대한사람 대한으로 길이 보전하세</string>
     <string name="logout">로그아웃</string>
+    <string name="recommend_toolbar_title">어울리는 향수 찾기</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="recommend_question_one">Q1. 성별은 어떻게 되시나요?</string>
+    <string name="recommend_question_one_detail">본인 혹은 선물을 주고 싶은 그 사람의 성별을 골라주세요.</string>
+    <string name="recommend_question_two">Q2. 어떤 스타일의 옷을 선호하시나요?</string>
+    <string name="recommend_question_two_detail">본인 혹은 선물을 주고 싶은 그 사람이 자주 입는 스타일을 골라주세요.</string>
+    <string name="recommend_question_two_one">캐주얼</string>
+    <string name="recommend_question_two_two">스트릿</string>
+    <string name="recommend_question_two_three">미니멀</string>
+    <string name="recommend_question_two_four">정장</string>
+    <string name="recommend_question_three">Q3. 성격은 어떻게 되시나요?</string>
+    <string name="recommend_question_three_detail">본인 혹은 선물을 주고 싶은 그 사람의 성격을 골라주세요.</string>
+    <string name="recommend_question_three_one">내향적</string>
+    <string name="recommend_question_three_two">외향적</string>
+    <string name="recommend_question_four">Q4. 나이대는 어떻게 되시나요?</string>
+    <string name="recommend_question_four_detail">본인 혹은 선물을 주고 싶은 그 사람의 나이를 골라주세요.</string>
+    <string name="recommend_question_four_one">10대</string>
+    <string name="recommend_question_four_two">20대</string>
+    <string name="recommend_question_four_three">30대</string>
+    <string name="recommend_question_four_four">40대</string>
+    <string name="recommend_end_title">당신에게 어울리는 향수는?</string>
+    <string name="man">남성</string>
+    <string name="woman">여성</string>
+    <string name="preview">이전</string>
+    <string name="next">다음</string>
+    <string name="go_to_main">메인 화면으로</string>
 </resources>
