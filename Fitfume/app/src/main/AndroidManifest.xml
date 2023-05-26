@@ -20,6 +20,13 @@
         android:theme="@style/Theme.Fitfume"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".PerfumeDetailActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".view.RecommendActivity"
             android:exported="true">
             <meta-data
@@ -56,8 +63,8 @@
         </activity>
         <activity
             android:name=".view.HomeActivity"
-            android:windowSoftInputMode="adjustNothing"
-            android:exported="true">
+            android:exported="true"
+            android:windowSoftInputMode="adjustNothing">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

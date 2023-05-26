@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="perfumeDetail"
+            type="com.example.fitfume.view.PerfumeDetailActivity" />
+
+        <variable
+            name="perfumeDatailVm"
+            type="com.example.fitfume.viewmodel.PerfumeViewModel" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.PerfumeDetailActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/perfume_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:elevation="1.5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/perfume_content_nc"
+            app:layout_constraintHeight_percent="0.088"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/recommend_back_button_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="28dp"
+                android:src="@drawable/icon_back_button_drawable" />
+
+            <TextView
+                android:id="@+id/recommend_toolbar_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6.8dp"
+                android:fontFamily="@font/pretendard_semibold"
+                android:text="쟈도르 오 드 퍼퓸"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/perfume_content_nc"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            android:background="@color/light_grey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/perfume_toolbar"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/perfume_content_cl"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/perfume_image_iv"
+                    app:layout_constraintHeight_percent="0.2"
+                    android:src="@drawable/recommend_question_four_three"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <TextView
+                    android:id="@+id/perfume_brand_tv"
+                    android:layout_width="0dp"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintWidth_percent="0.073"
+                    app:layout_constraintHeight_percent="0.007"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="25dp"
+                    android:textColor="@color/main_Color"
+                    android:fontFamily="@font/pretendard_medium"
+                    android:autoSizeStepGranularity="1dp"
+                    android:autoSizeMinTextSize="1dp"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMaxTextSize="13dp"
+                    android:lineSpacingExtra="7sp"
+                    android:text="Dior"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/perfume_image_iv"/>
+
+                <TextView
+                    android:id="@+id/perfume_name_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintHeight_percent="0.008"
+                    android:text="쟈도르 오 드 퍼퓸"
+                    android:fontFamily="@font/pretendard_semibold"
+                    android:textColor="@color/black"
+                    android:lineSpacingExtra="5sp"
+                    android:layout_marginTop="5dp"
+                    android:autoSizeMaxTextSize="15dp"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="1dp"
+                    android:autoSizeStepGranularity="1dp"
+                    app:layout_constraintStart_toStartOf="@+id/perfume_brand_tv"
+                    app:layout_constraintTop_toBottomOf="@+id/perfume_brand_tv"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/perfume_review_start_iv"
+                    android:layout_width="0dp"
+                    app:layout_constraintWidth_percent="0.045"
+                    app:layout_constraintHeight_percent="0.008"
+                    android:layout_marginTop="5dp"
+                    android:layout_height="0dp"
+                    android:src="@drawable/icon_review_start_drawable"
+                    app:layout_constraintStart_toStartOf="@+id/perfume_name_tv"
+                    app:layout_constraintTop_toBottomOf="@+id/perfume_name_tv"/>
+
+                <TextView
+                    android:id="@+id/perfume_review_grade_tv"
+                    android:layout_width="0dp"
+                    app:layout_constraintWidth_percent="0.0306"
+                    app:layout_constraintHeight_percent="0.008"
+                    android:layout_height="0dp"
+                    android:lineSpacingExtra="5sp"
+                    android:autoSizeStepGranularity="1dp"
+                    android:autoSizeMinTextSize="1do"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMaxTextSize="15dp"
+                    android:fontFamily="@font/pretendard_medium"
+                    android:textColor="@color/black"
+                    android:text="4.7"
+                    android:layout_marginStart="5dp"
+                    app:layout_constraintStart_toEndOf="@+id/perfume_review_start_iv"
+                    app:layout_constraintTop_toTopOf="@+id/perfume_review_start_iv"/>
+
+                <TextView
+                    android:id="@+id/perfume_review_count_tv"
+                    android:layout_width="0dp"
+                    app:layout_constraintWidth_percent="0.069"
+                    app:layout_constraintHeight_percent="0.008"
+                    android:layout_height="0dp"
+                    android:lineSpacingExtra="5sp"
+                    android:autoSizeStepGranularity="1dp"
+                    android:autoSizeMinTextSize="1do"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMaxTextSize="15dp"
+                    android:fontFamily="@font/pretendard_light"
+                    android:textColor="@color/black"
+                    android:text="(10)"
+                    android:layout_marginStart="5dp"
+                    app:layout_constraintStart_toEndOf="@+id/perfume_review_grade_tv"
+                    app:layout_constraintTop_toTopOf="@+id/perfume_review_grade_tv"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
