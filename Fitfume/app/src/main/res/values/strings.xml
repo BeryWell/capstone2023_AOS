@@ -56,4 +56,14 @@
     <string name="winter">겨울</string>
     <string name="neutrality">중성</string>
     <string name="search">검색</string>
+    <string name="perfume_topNote">Top Note</string>
+    <string name="perfume_middleNote">Middle Note</string>
+    <string name="perfume_baseNote">Base Note</string>
+    <string name="perfume_persistence">지속력</string>
+    <string name="perfume_sexual">성향</string>
+    <string name="perfume_weather">계절</string>
+    <string name="perfume_style">스타일</string>
+    <string name="perfume_review">리뷰</string>
+    <string name="review_more_info">더보기</string>
+    <string name="perfume_go_to_review">리뷰 작성하기</string>
 </resources>

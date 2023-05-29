@@ -59,7 +59,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/perfume_toolbar"
-            app:layout_constraintBottom_toBottomOf="parent">
+            app:layout_constraintBottom_toTopOf="@+id/perfume_bottom_bar_cl">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/perfume_content_cl"
@@ -68,11 +68,11 @@
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/perfume_image_iv"
-                    app:layout_constraintHeight_percent="0.2"
+                    app:layout_constraintHeight_percent="0.22125"
                     android:src="@drawable/recommend_question_four_three"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_marginTop="10dp"
+                    android:scaleType="fitXY"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"/>
@@ -80,11 +80,10 @@
                 <TextView
                     android:id="@+id/perfume_brand_tv"
                     android:layout_width="0dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="10dp"
                     app:layout_constraintWidth_percent="0.073"
-                    app:layout_constraintHeight_percent="0.007"
+                    app:layout_constraintHeight_percent="0.00875"
                     android:layout_height="0dp"
-                    android:layout_marginStart="25dp"
                     android:textColor="@color/main_Color"
                     android:fontFamily="@font/pretendard_medium"
                     android:autoSizeStepGranularity="1dp"
@@ -93,14 +92,14 @@
                     android:autoSizeMaxTextSize="13dp"
                     android:lineSpacingExtra="7sp"
                     android:text="Dior"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/perfume_division3"
                     app:layout_constraintTop_toBottomOf="@+id/perfume_image_iv"/>
 
                 <TextView
                     android:id="@+id/perfume_name_tv"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    app:layout_constraintHeight_percent="0.008"
+                    app:layout_constraintHeight_percent="0.01"
                     android:text="쟈도르 오 드 퍼퓸"
                     android:fontFamily="@font/pretendard_semibold"
                     android:textColor="@color/black"
@@ -118,7 +117,7 @@
                     android:id="@+id/perfume_review_start_iv"
                     android:layout_width="0dp"
                     app:layout_constraintWidth_percent="0.045"
-                    app:layout_constraintHeight_percent="0.008"
+                    app:layout_constraintHeight_percent="0.01"
                     android:layout_marginTop="5dp"
                     android:layout_height="0dp"
                     android:src="@drawable/icon_review_start_drawable"
@@ -129,16 +128,16 @@
                     android:id="@+id/perfume_review_grade_tv"
                     android:layout_width="0dp"
                     app:layout_constraintWidth_percent="0.0306"
-                    app:layout_constraintHeight_percent="0.008"
+                    app:layout_constraintHeight_percent="0.01"
                     android:layout_height="0dp"
                     android:lineSpacingExtra="5sp"
                     android:autoSizeStepGranularity="1dp"
-                    android:autoSizeMinTextSize="1do"
+                    android:autoSizeMinTextSize="1dp"
                     android:autoSizeTextType="uniform"
                     android:autoSizeMaxTextSize="15dp"
                     android:fontFamily="@font/pretendard_medium"
                     android:textColor="@color/black"
-                    android:text="4.7"
+                    android:text="4"
                     android:layout_marginStart="5dp"
                     app:layout_constraintStart_toEndOf="@+id/perfume_review_start_iv"
                     app:layout_constraintTop_toTopOf="@+id/perfume_review_start_iv"/>
@@ -147,11 +146,11 @@
                     android:id="@+id/perfume_review_count_tv"
                     android:layout_width="0dp"
                     app:layout_constraintWidth_percent="0.069"
-                    app:layout_constraintHeight_percent="0.008"
+                    app:layout_constraintHeight_percent="0.01"
                     android:layout_height="0dp"
                     android:lineSpacingExtra="5sp"
                     android:autoSizeStepGranularity="1dp"
-                    android:autoSizeMinTextSize="1do"
+                    android:autoSizeMinTextSize="1dp"
                     android:autoSizeTextType="uniform"
                     android:autoSizeMaxTextSize="15dp"
                     android:fontFamily="@font/pretendard_light"
@@ -161,11 +160,437 @@
                     app:layout_constraintStart_toEndOf="@+id/perfume_review_grade_tv"
                     app:layout_constraintTop_toTopOf="@+id/perfume_review_grade_tv"/>
 
+                <View
+                    android:id="@+id/perfume_division1"
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="@color/division_grey"
+                    android:layout_marginTop="12dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/perfume_review_count_tv"/>
+
+                <TextView
+                    android:id="@+id/perfume_topNote_context_tv"
+                    android:layout_width="0dp"
+                    app:layout_constraintWidth_percent="0.114"
+                    android:layout_height="0dp"
+                    app:layout_constraintHeight_percent="0.0075"
+                    android:text="@string/perfume_topNote"
+                    android:autoSizeMaxTextSize="12dp"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="1dp"
+                    android:autoSizeStepGranularity="1dp"
+                    android:textColor="@color/black"
+                    android:lineSpacingExtra="8sp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/pretendard_medium"
+                    app:layout_constraintStart_toStartOf="@+id/perfume_brand_tv"
+                    app:layout_constraintTop_toBottomOf="@+id/perfume_division1"/>
+
+                <TextView
+                    android:id="@+id/perfume_topNote_info_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintHeight_percent="0.00625"
+                    android:lineSpacingExtra="2sp"
+                    android:autoSizeStepGranularity="1dp"
+                    android:autoSizeMinTextSize="1dp"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMaxTextSize="10dp"
+                    android:fontFamily="@font/pretendard_medium"
+                    android:textColor="@color/black"
+                    android:text="목련 멜론 복숭아 서양 배 베르가못 만다린 오렌지"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toStartOf="@+id/perfume_topNote_context_tv"
+                    app:layout_constraintTop_toBottomOf="@+id/perfume_topNote_context_tv"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/perfume_middleNote_context_tv"
+                    android:layout_width="0dp"
+                    app:layout_constraintWidth_percent="0.153"
+                    android:layout_height="0dp"
+                    app:layout_constraintHeight_percent="0.0075"
+                    android:text="@string/perfume_middleNote"
+                    android:autoSizeMaxTextSize="12dp"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="1dp"
+                    android:autoSizeStepGranularity="1dp"
+                    android:textColor="@color/black"
+                    android:lineSpacingExtra="8sp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/pretendard_medium"
+                    app:layout_constraintStart_toStartOf="@+id/perfume_brand_tv"
+                    app:layout_constraintTop_toBottomOf="@+id/perfume_topNote_info_tv"/>
+
+                <TextView
+                    android:id="@+id/perfume_middleNote_info_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintHeight_percent="0.00625"
+                    android:lineSpacingExtra="2sp"
+                    android:autoSizeStepGranularity="1dp"
+                    android:autoSizeMinTextSize="1dp"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMaxTextSize="10dp"
+                    android:fontFamily="@font/pretendard_medium"
+                    android:textColor="@color/black"
+                    android:text="튜베로즈 플럼 바이올렛 난초 프레지아 쟈스민 은방을 꽃 로즈"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toStartOf="@+id/perfume_topNote_context_tv"
+                    app:layout_constraintTop_toBottomOf="@+id/perfume_middleNote_context_tv"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/perfume_baseNote_context_tv"
+                    android:layout_width="0dp"
+                    app:layout_constraintWidth_percent="0.131"
+                    android:layout_height="0dp"
+                    app:layout_constraintHeight_percent="0.0075"
+                    android:text="@string/perfume_baseNote"
+                    android:autoSizeMaxTextSize="12dp"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="1dp"
+                    android:autoSizeStepGranularity="1dp"
+                    android:textColor="@color/black"
+                    android:lineSpacingExtra="8sp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/pretendard_medium"
+                    app:layout_constraintStart_toStartOf="@+id/perfume_brand_tv"
+                    app:layout_constraintTop_toBottomOf="@+id/perfume_middleNote_info_tv"/>
+
+                <TextView
+                    android:id="@+id/perfume_baseNote_info_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintHeight_percent="0.00625"
+                    android:lineSpacingExtra="2sp"
+                    android:autoSizeStepGranularity="1dp"
+                    android:autoSizeMinTextSize="1dp"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMaxTextSize="10dp"
+                    android:fontFamily="@font/pretendard_medium"
+                    android:textColor="@color/black"
+                    android:text="머스크 바닐라 삼나무 블랙베리"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toStartOf="@+id/perfume_topNote_context_tv"
+                    app:layout_constraintTop_toBottomOf="@+id/perfume_baseNote_context_tv"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <View
+                    android:id="@+id/perfume_division2"
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="@color/division_grey"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/perfume_baseNote_info_tv"/>
+
+                <TextView
+                    android:id="@+id/perfume_persistence_context_tv"
+                    android:layout_width="0dp"
+                    app:layout_constraintWidth_percent="0.085"
+                    android:layout_height="0dp"
+                    app:layout_constraintHeight_percent="0.0085"
+                    android:fontFamily="@font/pretendard_semibold"
+                    android:text="@string/perfume_persistence"
+                    android:layout_marginTop="18.7dp"
+                    android:lineSpacingExtra="8sp"
+                    android:autoSizeMaxTextSize="14dp"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="1dp"
+                    android:autoSizeStepGranularity="1dp"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="@+id/perfume_baseNote_info_tv"
+                    app:layout_constraintTop_toBottomOf="@+id/perfume_division2"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/perfume_persistence_percent_iv"
+                    android:layout_width="0dp"
+                    app:layout_constraintWidth_percent="0.862"
+                    app:layout_constraintHeight_percent="0.02"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="12dp"
+                    android:src="@drawable/perfume_persistence_1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/perfume_persistence_context_tv"/>
+
+                <View
+                    android:id="@+id/perfume_division3"
+                    android:layout_width="0dp"
+                    app:layout_constraintWidth_percent="0.862"
+                    android:layout_height="0.7dp"
+                    android:background="@color/division_grey"
+                    android:layout_marginTop="18.7dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/perfume_persistence_percent_iv"/>
+
+
+                <TextView
+                    android:id="@+id/perfume_sexual_context_tv"
+                    android:layout_width="0dp"
+                    app:layout_constraintWidth_percent="0.055"
+                    android:layout_height="0dp"
+                    app:layout_constraintHeight_percent="0.0085"
+                    android:fontFamily="@font/pretendard_semibold"
+                    android:text="@string/perfume_sexual"
+                    android:layout_marginTop="18.7dp"
+                    android:lineSpacingExtra="8sp"
+                    android:autoSizeMaxTextSize="14dp"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="1dp"
+                    android:autoSizeStepGranularity="1dp"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="@+id/perfume_baseNote_info_tv"
+                    app:layout_constraintTop_toBottomOf="@+id/perfume_division3"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/perfume_sexual_percent_iv"
+                    android:layout_width="0dp"
+                    app:layout_constraintWidth_percent="0.862"
+                    app:layout_constraintHeight_percent="0.02"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="12dp"
+                    android:src="@drawable/perfume_sexual_4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/perfume_sexual_context_tv"/>
+
+                <View
+                    android:id="@+id/perfume_division4"
+                    android:layout_width="0dp"
+                    app:layout_constraintWidth_percent="0.862"
+                    android:layout_height="0.7dp"
+                    android:background="@color/division_grey"
+                    android:layout_marginTop="18.7dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/perfume_sexual_percent_iv"/>
+
+                <TextView
+                    android:id="@+id/perfume_weather_context_tv"
+                    android:layout_width="0dp"
+                    app:layout_constraintWidth_percent="0.055"
+                    android:layout_height="0dp"
+                    app:layout_constraintHeight_percent="0.0085"
+                    android:fontFamily="@font/pretendard_semibold"
+                    android:text="@string/perfume_weather"
+                    android:layout_marginTop="18.7dp"
+                    android:lineSpacingExtra="8sp"
+                    android:autoSizeMaxTextSize="14dp"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="1dp"
+                    android:autoSizeStepGranularity="1dp"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="@+id/perfume_baseNote_info_tv"
+                    app:layout_constraintTop_toBottomOf="@+id/perfume_division4"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/perfume_weather_percent_iv"
+                    android:layout_width="0dp"
+                    app:layout_constraintWidth_percent="0.862"
+                    app:layout_constraintHeight_percent="0.02"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="12dp"
+                    android:src="@drawable/perfume_weather_2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/perfume_weather_context_tv"/>
+
+                <View
+                    android:id="@+id/perfume_division5"
+                    android:layout_width="0dp"
+                    app:layout_constraintWidth_percent="0.862"
+                    android:layout_height="0.7dp"
+                    android:background="@color/division_grey"
+                    android:layout_marginTop="18.7dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/perfume_weather_percent_iv"/>
+
+                <TextView
+                    android:id="@+id/perfume_style_context_tv"
+                    android:layout_width="0dp"
+                    app:layout_constraintWidth_percent="0.085"
+                    android:layout_height="0dp"
+                    app:layout_constraintHeight_percent="0.0085"
+                    android:fontFamily="@font/pretendard_semibold"
+                    android:text="@string/perfume_style"
+                    android:layout_marginTop="18.7dp"
+                    android:lineSpacingExtra="8sp"
+                    android:autoSizeMaxTextSize="14dp"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="1dp"
+                    android:autoSizeStepGranularity="1dp"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="@+id/perfume_baseNote_info_tv"
+                    app:layout_constraintTop_toBottomOf="@+id/perfume_division5"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/perfume_style_percent_iv"
+                    android:layout_width="0dp"
+                    app:layout_constraintWidth_percent="0.862"
+                    app:layout_constraintHeight_percent="0.02"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="12dp"
+                    android:src="@drawable/perfume_style_5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/perfume_style_context_tv"/>
+
+                <View
+                    android:id="@+id/perfume_division6"
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="@color/division_grey"
+                    android:layout_marginTop="17.5dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/perfume_style_percent_iv"/>
+
+                <TextView
+                    android:id="@+id/perfume_review_context_tv"
+                    android:layout_width="0dp"
+                    app:layout_constraintWidth_percent="0.062"
+                    android:layout_height="0dp"
+                    app:layout_constraintHeight_percent="0.01"
+                    android:text="@string/perfume_review"
+                    android:fontFamily="@font/pretendard_semibold"
+                    android:textColor="@color/black"
+                    android:lineSpacingExtra="5sp"
+                    android:layout_marginTop="18.7dp"
+                    android:autoSizeMaxTextSize="15dp"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="1dp"
+                    android:autoSizeStepGranularity="1dp"
+                    app:layout_constraintStart_toStartOf="@+id/perfume_division5"
+                    app:layout_constraintTop_toBottomOf="@+id/perfume_division6"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/perfume_review_star_iv"
+                    android:layout_width="0dp"
+                    app:layout_constraintWidth_percent="0.045"
+                    app:layout_constraintHeight_percent="0.01"
+                    android:layout_marginTop="8dp"
+                    android:layout_height="0dp"
+                    android:src="@drawable/icon_review_start_drawable"
+                    app:layout_constraintStart_toStartOf="@+id/perfume_review_context_tv"
+                    app:layout_constraintTop_toBottomOf="@+id/perfume_review_context_tv"/>
+
+                <TextView
+                    android:id="@+id/perfume_review_grade1_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="4dp"
+                    android:autoSizeMaxTextSize="15dp"
+                    android:autoSizeMinTextSize="1dp"
+                    android:autoSizeStepGranularity="1dp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/pretendard_medium"
+                    android:lineSpacingExtra="5sp"
+                    android:text="4"
+                    android:textColor="@color/black"
+                    app:layout_constraintHeight_percent="0.01"
+                    app:layout_constraintStart_toEndOf="@+id/perfume_review_star_iv"
+                    app:layout_constraintTop_toTopOf="@+id/perfume_review_star_iv"
+                    app:layout_constraintWidth_percent="0.0306" />
+
+                <TextView
+                    android:id="@+id/perfume_review_count1_tv"
+                    android:layout_width="0dp"
+                    app:layout_constraintWidth_percent="0.069"
+                    app:layout_constraintHeight_percent="0.01"
+                    android:layout_height="0dp"
+                    android:lineSpacingExtra="5sp"
+                    android:autoSizeStepGranularity="1dp"
+                    android:autoSizeMinTextSize="1dp"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMaxTextSize="15dp"
+                    android:fontFamily="@font/pretendard_light"
+                    android:textColor="@color/black"
+                    android:text="(10)"
+                    android:layout_marginStart="5dp"
+                    app:layout_constraintStart_toEndOf="@+id/perfume_review_grade1_tv"
+                    app:layout_constraintTop_toTopOf="@+id/perfume_review_grade1_tv"/>
+
+                <View
+                    android:id="@+id/perfume_division7"
+                    android:layout_width="0dp"
+                    app:layout_constraintWidth_percent="0.862"
+                    android:layout_height="0.7dp"
+                    android:background="@color/division_grey"
+                    android:layout_marginTop="18.7dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/perfume_review_count1_tv"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/perfume_more_info_btn"
+                    android:layout_width="0dp"
+                    android:elevation="2dp"
+                    app:layout_constraintWidth_percent="0.114"
+                    android:background="@drawable/search_bar_background"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="7.7dp"
+                    app:layout_constraintHeight_percent="0.01"
+                    android:textColor="@color/review_perfume_name"
+                    android:text="@string/review_more_info"
+                    android:textSize="8sp"
+                    android:fontFamily="@font/pretendard_medium"
+                    app:layout_constraintEnd_toEndOf="@+id/perfume_division7"
+                    app:layout_constraintTop_toBottomOf="@+id/perfume_division7"/>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/perfume_review_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintHeight_percent="0.39"
+                    android:layout_marginTop="13dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginBottom="20dp"
+                    app:layout_constraintTop_toBottomOf="@+id/perfume_more_info_btn"
+                    tools:listitem="@layout/item_my_review" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.core.widget.NestedScrollView>
 
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/perfume_bottom_bar_cl"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.088"
+            android:background="@color/white"
+            android:elevation="2dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
 
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/perfume_go_to_review_btn"
+                android:layout_width="0dp"
+                app:layout_constraintWidth_percent="0.862"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_percent="0.696"
+                android:background="@drawable/login_main_color_background_drawable"
+                android:fontFamily="@font/pretendard_semibold"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:lineSpacingExtra="4sp"
+                android:text="@string/perfume_go_to_review"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
