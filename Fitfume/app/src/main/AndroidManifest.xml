@@ -20,12 +20,18 @@
         android:theme="@style/Theme.Fitfume"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".view.PerfumeDetailActivity"
+            android:name=".item_search_result"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".view.SearchResultActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -34,6 +40,13 @@
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.PerfumeDetailActivity"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
         </activity>
         <activity
             android:name=".view.RecommendActivity"
