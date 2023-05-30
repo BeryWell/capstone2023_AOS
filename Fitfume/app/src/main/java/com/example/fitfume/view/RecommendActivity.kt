@@ -1,5 +1,6 @@
 package com.example.fitfume.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
@@ -19,13 +20,24 @@ class RecommendActivity : AppCompatActivity() {
         setContentView(binding.root)
         binding.gptVm = viewModel
 
+        setSupportActionBar(binding.recommendToolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        binding.recommendToolbar.title = "어울리는 향수 찾기"
 
-        replaceFragment(RecommendQ1Fragment())
+
+       replaceFragment(RecommendQ1Fragment())
     }
 
     public fun replaceFragment(fragment: Fragment) {
         val transcation = supportFragmentManager.beginTransaction()
             .add(R.id.recommend_fragment_fl, fragment)
         transcation.commit()
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+
+        val intent = Intent(this, HomeActivity::class.java)
+        startActivity(intent)
     }
 }

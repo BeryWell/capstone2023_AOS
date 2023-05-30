@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fitfume.R
 import com.example.fitfume.adapter.PerfumeReviewRecyclerViewAdapter
@@ -23,6 +24,9 @@ class PerfumeDetailActivity : AppCompatActivity() {
 
         binding.lifecycleOwner = this
         binding.perfumeDatailVm = viewModel;
+
+        setSupportActionBar(binding.perfumeToolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         binding.perfumeReviewRv.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
@@ -49,6 +53,16 @@ class PerfumeDetailActivity : AppCompatActivity() {
         val intentBrand = intent.getStringExtra("brand")
         val intentTitle = intent.getStringExtra("title")
         val intentCount = intent.getStringExtra("count")
+        val topNotes = intent.getStringExtra("topNotes")
+        val middleNotes = intent.getStringExtra("middleNotes")
+        val baseNotes = intent.getStringExtra("baseNotes")
+
+        binding.perfumeBrandTv.text = intentBrand
+        binding.perfumeNameTv.text = intentTitle
+        binding.perfumeToolbar.title = intentTitle
+        binding.perfumeTopNoteInfoTv.text = topNotes
+        binding.perfumeMiddleNoteInfoTv.text = middleNotes
+        binding.perfumeBaseNoteInfoTv.text = baseNotes
 
         Log.d("lhj_purfumeDetail", "onCreate: $intentBrand $intentTitle $intentCount")
 

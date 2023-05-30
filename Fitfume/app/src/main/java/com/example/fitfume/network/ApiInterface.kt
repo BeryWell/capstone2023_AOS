@@ -2,14 +2,13 @@ package com.example.fitfume.network
 
 import com.example.fitfume.network.data.request.GptRequest
 import com.example.fitfume.network.data.response.FindAllPerfumeResponse
+import com.example.fitfume.network.data.response.FindPerfumeResponse
 import com.example.fitfume.network.data.response.GptResponse
+import com.example.fitfume.network.data.response.PerfumeResponse
 import io.reactivex.Single
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.Header
-import retrofit2.http.POST
+import retrofit2.http.*
 
-interface ApiInterface {
+interface  ApiInterface {
 
     //ChatGPT POST
     @POST("chat/completions")
@@ -18,4 +17,7 @@ interface ApiInterface {
     // perfume find all
     @GET("/api/perfume/findAll")
     fun findAllPerfumes(): Single<List<FindAllPerfumeResponse>>
+
+    @GET("/api/perfume/get_perfumes")
+    fun findPerfumeByName(@Query("name") name: String): Single<PerfumeResponse>
 }

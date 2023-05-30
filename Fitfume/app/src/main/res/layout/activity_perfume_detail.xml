@@ -25,29 +25,13 @@
             android:layout_height="wrap_content"
             android:background="@color/white"
             android:elevation="1.5dp"
+            app:title="Perfume Name"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/perfume_content_nc"
             app:layout_constraintHeight_percent="0.088"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:id="@+id/recommend_back_button_iv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="28dp"
-                android:src="@drawable/icon_back_button_drawable" />
-
-            <TextView
-                android:id="@+id/recommend_toolbar_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6.8dp"
-                android:fontFamily="@font/pretendard_semibold"
-                android:text="쟈도르 오 드 퍼퓸"
-                android:textColor="@color/black"
-                android:textSize="18sp" />
         </androidx.appcompat.widget.Toolbar>
 
         <androidx.core.widget.NestedScrollView

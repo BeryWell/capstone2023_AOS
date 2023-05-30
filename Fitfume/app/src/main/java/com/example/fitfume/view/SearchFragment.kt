@@ -2,6 +2,7 @@ package com.example.fitfume.view
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -42,9 +43,16 @@ class SearchFragment : Fragment() {
 
 
         binding.searchGoToResultBtn.setOnClickListener {
+            val perfumeName = binding.searchPerfumeWordEt.text.toString()
+//            viewModel.findPerfumeByName(perfumeName)
+
             val intent = Intent(requireActivity(), SearchResultActivity::class.java)
+            intent.putExtra("name", perfumeName)
             startActivity(intent)
+
         }
+
+
 
         return binding.root
     }
