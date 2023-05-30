@@ -92,4 +92,6 @@
     <string name="mbti_f_bottom">슬픔은 나누면 반이 된다</string>
     <string name="mbti_p_top">적응적, 융통성</string>
     <string name="mbti_p_bottom">일단 해보면 알겠지?</string>
+    <string name="show">보기</string>
+    <string name="mbti_result">MBTI로 향수 추천받기</string>
 </resources>

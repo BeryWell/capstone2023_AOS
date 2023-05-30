@@ -3,6 +3,7 @@ package com.example.fitfume.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
@@ -39,15 +40,16 @@ class FitfumeEventBannerViewPagerAdapter() : RecyclerView.Adapter<RecyclerView.V
     }
 
     class FitfumeEventViewHolder constructor(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val title = itemView.findViewById<TextView>(R.id.cs_item_event_banner_title_tv)!!
-        private val subTitle = itemView.findViewById<TextView>(R.id.cs_item_event_banner_sub_title_tv)
-        private val backgroundCl = itemView.findViewById<ConstraintLayout>(R.id.cs_item_event_banner_cl)
+//        private val title = itemView.findViewById<TextView>(R.id.cs_item_event_banner_title_tv)!!
+//        private val subTitle = itemView.findViewById<TextView>(R.id.cs_item_event_banner_sub_title_tv)
+//        private val backgroundCl = itemView.findViewById<ConstraintLayout>(R.id.cs_item_event_banner_cl)
+        val img: ImageView = itemView.findViewById(R.id.cs_item_event_banner_iv)
 
         fun bind(fitfumeEventItem: FitfumeEventBanner) {
-            title.text= fitfumeEventItem.title
-            subTitle.text = fitfumeEventItem.subTitle
+//            title.text= fitfumeEventItem.title
+//            subTitle.text = fitfumeEventItem.subTitle
 
-            backgroundCl.setBackgroundResource(fitfumeEventItem.imgUrl)
+            img.setBackgroundResource(fitfumeEventItem.imgUrl)
         }
     }
 

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="mbtiResult"
+            type="com.example.fitfume.view.RecommendMbtiResultActivity" />
+
+        <variable
+            name="mbtiResultVm"
+            type="com.example.fitfume.viewmodel.GptViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.RecommendMbtiResultActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/recommend_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/white"
+            android:elevation="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.088"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <ImageView
+                android:id="@+id/recommend_back_button_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="28dp"
+                android:src="@drawable/icon_back_button_drawable" />
+
+            <TextView
+                android:id="@+id/recommend_toolbar_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6.8dp"
+                android:fontFamily="@font/pretendard_semibold"
+                android:text="@string/mbti_result"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </androidx.appcompat.widget.Toolbar>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/light_grey"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recommend_toolbar"
+            tools:context=".RecommendEndFragment">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/recommend_end_cl"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/login_background_drawable"
+                android:elevation="2dp"
+                app:layout_constraintBottom_toTopOf="@+id/recommend_end_btn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.20"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.862">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/recommend_end_text_cl"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_percent="0.592"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_percent="0.522">
+
+                    <TextView
+                        android:id="@+id/recommend_end_context_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:autoSizeMaxTextSize="16dp"
+                        android:autoSizeMinTextSize="1dp"
+                        android:autoSizeStepGranularity="1dp"
+                        android:autoSizeTextType="uniform"
+                        android:fontFamily="@font/pretendard_semibold"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:lineSpacingExtra="4dp"
+                        android:text="@string/recommend_end_title"
+                        android:textColor="@color/main_Color"
+                        app:layout_constraintBottom_toTopOf="@+id/recommend_end_perfume_tv"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHeight_percent="0.24"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_chainStyle="spread_inside" />
+
+                    <TextView
+                        android:id="@+id/recommend_end_perfume_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:autoSizeMaxTextSize="16dp"
+                        android:autoSizeMinTextSize="1dp"
+                        android:autoSizeStepGranularity="1dp"
+                        android:autoSizeTextType="uniform"
+                        android:fontFamily="@font/pretendard_semibold"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="추천중입니다"
+                        android:textColor="@color/black"
+                        app:layout_constraintBottom_toTopOf="@+id/recommend_end_perfume_detail_tv"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHeight_percent="0.239"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/recommend_end_context_tv" />
+
+                    <TextView
+                        android:id="@+id/recommend_end_perfume_detail_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:autoSizeMaxTextSize="14dp"
+                        android:autoSizeMinTextSize="1dp"
+                        android:autoSizeStepGranularity="1dp"
+                        android:autoSizeTextType="uniform"
+                        android:fontFamily="@font/pretendard_medium"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text=""
+                        android:textColor="@color/black"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHeight_percent="0.211"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/recommend_end_perfume_tv" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/recommend_end_btn"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="50dp"
+                android:autoSizeMaxTextSize="15dp"
+                android:autoSizeMinTextSize="1dp"
+                android:autoSizeStepGranularity="1dp"
+                android:autoSizeTextType="uniform"
+                android:background="@drawable/recommend_main_color_btn_drawable"
+                android:fontFamily="@font/pretendard_semibold"
+                android:text="@string/go_to_main"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.0684"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintWidth_percent="0.862" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -11,35 +11,41 @@
             android:id="@+id/cs_item_event_banner_cl"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingTop="15dp"
-            android:paddingStart="20dp"
-            android:paddingEnd="15dp"
-            android:background="@color/black">
+            android:background="@color/light_grey">
 
-            <TextView
-                android:id="@+id/cs_item_event_banner_title_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/pretendard_medium"
-                android:text="글램핑 가고싶다"
-                android:textColor="@color/white"
-                android:textSize="24sp"
-                android:textStyle="bold"
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/cs_item_event_banner_iv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+<!--            <TextView-->
+<!--                android:id="@+id/cs_item_event_banner_title_tv"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:fontFamily="@font/pretendard_medium"-->
+<!--                android:text="글램핑 가고싶다"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="24sp"-->
+<!--                android:textStyle="bold"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
 
-            <TextView
-                android:id="@+id/cs_item_event_banner_sub_title_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:fontFamily="@font/pretendard_bold"
-                android:text="#글램핑 좋아~~"
-                android:textColor="@color/white"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cs_item_event_banner_title_tv" />
+<!--            <TextView-->
+<!--                android:id="@+id/cs_item_event_banner_sub_title_tv"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="8dp"-->
+<!--                android:fontFamily="@font/pretendard_bold"-->
+<!--                android:text="#글램핑 좋아~~"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="18sp"-->
+<!--                android:textStyle="bold"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/cs_item_event_banner_title_tv" />-->
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 

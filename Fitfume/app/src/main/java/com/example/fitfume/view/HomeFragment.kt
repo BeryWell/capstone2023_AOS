@@ -1,6 +1,9 @@
 package com.example.fitfume.view
 
+import android.content.Intent
+import android.opengl.Visibility
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -47,6 +50,119 @@ class HomeFragment : Fragment() {
 
         bestPerfumeRecyclerViewAdapter.submitBestPerfumeEventList(list)
 
+
+//        val mbtiI = binding.homeRecommendMbtiICl
+//        val mbtiE = binding.homeRecommendMbtiECl
+//
+//        val mbtiN = binding.homeRecommendMbtiNCl
+//        val mbtiS = binding.homeRecommendMbtiSCl
+//
+//        val mbtiF = binding.homeRecommendMbtiFCl
+//        val mbtiT = binding.homeRecommendMbtiTCl
+//
+//        val mbtiP = binding.homeRecommendMbtiPCl
+//        val mbtiJ = binding.homeRecommendMbtiJCl
+//
+//        mbtiI.setOnClickListener {
+//            mbtiI.isSelected = true
+//            mbtiE.isSelected = false
+//        }
+//
+//        mbtiE.setOnClickListener {
+//            mbtiI.isSelected = false
+//            mbtiE.isSelected = true
+//        }
+//
+//        mbtiN.setOnClickListener {
+//            mbtiN.isSelected = true
+//            mbtiS.isSelected = false
+//        }
+//
+//        mbtiS.setOnClickListener {
+//            mbtiN.isSelected = false
+//            mbtiS.isSelected = true
+//        }
+//
+//        mbtiF.setOnClickListener {
+//            mbtiF.isSelected = true
+//            mbtiT.isSelected = false
+//        }
+//
+//        mbtiT.setOnClickListener {
+//            mbtiF.isSelected = false
+//            mbtiT.isSelected = true
+//        }
+//
+//        mbtiP.setOnClickListener {
+//            mbtiP.isSelected = true
+//            mbtiJ.isSelected = false
+//        }
+//
+//        mbtiJ.setOnClickListener {
+//            mbtiP.isSelected = false
+//            mbtiJ.isSelected = true
+//        }
+
+        val mbtiOptions = listOf(
+            Pair(binding.homeRecommendMbtiICl, binding.homeRecommendMbtiECl),
+            Pair(binding.homeRecommendMbtiNCl, binding.homeRecommendMbtiSCl),
+            Pair(binding.homeRecommendMbtiFCl, binding.homeRecommendMbtiTCl),
+            Pair(binding.homeRecommendMbtiPCl, binding.homeRecommendMbtiJCl)
+        )
+
+        val clickListener: (View) -> Unit = { clickedView ->
+            mbtiOptions.forEach { (option1, option2) ->
+                if (option1 == clickedView) {
+                    option1.isSelected = true
+                    option2.isSelected = false
+                } else if (option2 == clickedView) {
+                    option1.isSelected = false
+                    option2.isSelected = true
+                }
+            }
+
+            updateButtonVisibility(mbtiOptions)
+        }
+
+        mbtiOptions.forEach { (option1, option2) ->
+            option1.setOnClickListener(clickListener)
+            option2.setOnClickListener(clickListener)
+        }
+
+        binding.homeRecommendMbtiBtn.visibility = View.GONE
+
+        binding.homeRecommendMbtiBtn.setOnClickListener {
+            var mbti = ""
+
+            if(binding.homeRecommendMbtiICl.isSelected){
+                mbti += "I"
+            }else{
+                mbti += "E"
+            }
+
+            if(binding.homeRecommendMbtiNCl.isSelected){
+                mbti += "N"
+            }else{
+                mbti += "S"
+            }
+
+            if(binding.homeRecommendMbtiFCl.isSelected){
+                mbti += "F"
+            }else{
+                mbti += "T"
+            }
+
+            if(binding.homeRecommendMbtiPCl.isSelected){
+                mbti += "P"
+            }else{
+                mbti += "J"
+            }
+
+            val intent = Intent(requireActivity(), RecommendMbtiResultActivity::class.java)
+            intent.putExtra("mbti", mbti)
+            startActivity(intent)
+        }
+
         return binding.root
     }
 
@@ -75,4 +191,17 @@ class HomeFragment : Fragment() {
             }
         }
     }
+
+    private fun updateButtonVisibility(options: List<Pair<View, View>>) {
+        val trueCount = options.count { (option1, option2) ->
+            option1.isSelected || option2.isSelected
+        }
+
+        if (trueCount == 4) {
+            binding.homeRecommendMbtiBtn.visibility = View.VISIBLE
+        } else {
+            binding.homeRecommendMbtiBtn.visibility = View.GONE
+        }
+    }
+
 }
