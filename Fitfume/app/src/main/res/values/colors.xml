@@ -31,4 +31,7 @@
     <color name="light_grey">#f7f7f7</color>
     <color name="grey">#777777</color>
     <color name="search_filter_color">#ededed</color>
+    <color name="mbti_second">#ff8a41</color>
+    <color name="mbti_third">#0080ff</color>
+    <color name="mbti_fourth">#ff5c8e</color>
 </resources>

@@ -1,5 +1,6 @@
 package com.example.fitfume.view
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -37,6 +38,12 @@ class SearchFragment : Fragment() {
             toggleSelectionOnClick(searchFilterManBtn)
             toggleSelectionOnClick(searchFilterNeutralityBtn)
             toggleSelectionOnClick(searchFilterWomanBtn)
+        }
+
+
+        binding.searchGoToResultBtn.setOnClickListener {
+            val intent = Intent(requireActivity(), SearchResultActivity::class.java)
+            startActivity(intent)
         }
 
         return binding.root

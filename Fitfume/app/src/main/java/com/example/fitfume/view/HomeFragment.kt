@@ -39,12 +39,11 @@ class HomeFragment : Fragment() {
         binding.homeBestPerfumeRv.adapter = bestPerfumeRecyclerViewAdapter
 
         var list: MutableList<BestPerfumeEvent> = mutableListOf()
-        list.add(BestPerfumeEvent("1", "Dior", "미스 디올 블루밍 부케 오 드 뚜왈렛"))
-        list.add(BestPerfumeEvent("1", "Dior", "미스 디올 블루밍 부케 오 드 뚜왈렛"))
-        list.add(BestPerfumeEvent("1", "Dior", "미스 디올 블루밍 부케 오 드 뚜왈렛"))
-        list.add(BestPerfumeEvent("1", "Dior", "미스 디올 블루밍 부케 오 드 뚜왈렛"))
-        list.add(BestPerfumeEvent("1", "Dior", "미스 디올 블루밍 부케 오 드 뚜왈렛"))
-        list.add(BestPerfumeEvent("1", "Dior", "미스 디올 블루밍 부케 오 드 뚜왈렛"))
+        list.add(BestPerfumeEvent("1", "Dior", "미스 디올 블루밍 부케 오 드 뚜왈렛", R.drawable.home_best_perfume_1))
+        list.add(BestPerfumeEvent("2", "JO MALONE", "잉글리쉬 페어 앤 프리지아 코롱", R.drawable.home_best_perfume_2))
+        list.add(BestPerfumeEvent("3", "BYREDO", "바이레도 블랑쉬 오 드 퍼퓸", R.drawable.home_best_perfume_3))
+        list.add(BestPerfumeEvent("4", "롤리타렘피카", "롤리타렘피카 우먼 오 드 퍼퓸", R.drawable.home_best_perfume_4))
+        list.add(BestPerfumeEvent("5", "DIPTYQUE", "도 손 오드퍼퓸", R.drawable.home_best_perfume_5))
 
         bestPerfumeRecyclerViewAdapter.submitBestPerfumeEventList(list)
 

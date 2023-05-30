@@ -1,8 +1,10 @@
 package com.example.fitfume.adapter
 
+import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fitfume.R
@@ -40,12 +42,14 @@ class BestPerfumetRecyclerViewAdapter : RecyclerView.Adapter<RecyclerView.ViewHo
         val count: TextView = itemView.findViewById(R.id.perfume_count_tv)
         var brand: TextView = itemView.findViewById(R.id.perfume_brand_tv)
         var title: TextView = itemView.findViewById(R.id.perfume_title_tv)
+        val img: ImageView = itemView.findViewById(R.id.best_perfume_iv)
 
         //        val img : ImageView = itemView.findViewById(R.id.item_event_iv)
         fun bind(bestPerfumeEvent: BestPerfumeEvent) {
             count.text = bestPerfumeEvent.count
             brand.text = bestPerfumeEvent.brand
             title.text = bestPerfumeEvent.title
+            img.setImageResource(bestPerfumeEvent.img)
 //            img.setImageDrawable(communityEvent.img)
         }
     }

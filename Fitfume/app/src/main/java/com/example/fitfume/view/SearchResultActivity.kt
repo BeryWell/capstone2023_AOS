@@ -1,7 +1,9 @@
 package com.example.fitfume.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fitfume.R
@@ -38,6 +40,20 @@ class SearchResultActivity : AppCompatActivity() {
 
 
         searchResultRecyclerViewAdapter.submitSearchResultEventList(list)
+
+
+        searchResultRecyclerViewAdapter.setOnItemClickListener(
+            object:SearchResultRecyclerViewAdapter.OnItemClickListener{
+                override fun onItemClick(v: View, data: SearchResultEvent, pos: Int) {
+                    val intent = Intent(this@SearchResultActivity, PerfumeDetailActivity::class.java)
+                    intent.putExtra("brand", data.brand)
+                    intent.putExtra("title", data.title)
+//                    intent.putExtra("star", data.star)
+                    intent.putExtra("count", data.count)
+                    startActivity(intent)
+                }
+            }
+        )
 
     }
 }

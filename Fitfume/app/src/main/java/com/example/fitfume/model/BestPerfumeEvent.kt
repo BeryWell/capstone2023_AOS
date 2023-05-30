@@ -1,7 +1,8 @@
 package com.example.fitfume.model
 
 data class BestPerfumeEvent(
-    var count:String = "",
-    var brand: String = "",
-    var title: String = ""
+    val count:String,
+    val brand: String,
+    val title: String,
+    val img: Int
 )

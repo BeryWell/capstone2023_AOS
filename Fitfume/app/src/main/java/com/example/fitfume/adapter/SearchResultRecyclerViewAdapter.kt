@@ -15,6 +15,16 @@ class SearchResultRecyclerViewAdapter : RecyclerView.Adapter<RecyclerView.ViewHo
 
     private var searchResultEvent: List<SearchResultEvent>? = null
 
+    interface OnItemClickListener{
+        fun onItemClick(v: View, data: SearchResultEvent, pos: Int)
+    }
+
+    private var listener : OnItemClickListener? = null
+
+    fun setOnItemClickListener(listener : OnItemClickListener){
+        this.listener = listener
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return SearchResultViewHolder(
             LayoutInflater.from(parent.context)
@@ -37,7 +47,7 @@ class SearchResultRecyclerViewAdapter : RecyclerView.Adapter<RecyclerView.ViewHo
         notifyDataSetChanged()
     }
 
-    class SearchResultViewHolder constructor(itemView: View) :
+    inner class SearchResultViewHolder constructor(itemView: View) :
         RecyclerView.ViewHolder(itemView) {
 
         val brand: TextView = itemView.findViewById(R.id.search_result_branch_tv)
@@ -52,6 +62,15 @@ class SearchResultRecyclerViewAdapter : RecyclerView.Adapter<RecyclerView.ViewHo
             star.rating = searchResultEvent.star
             count.text = "( ${searchResultEvent.count} )"
 //            img.setImageDrawable(communityEvent.img)
+
+            val pos = adapterPosition
+
+            if(pos!=RecyclerView.NO_POSITION){
+                itemView.setOnClickListener {
+                    listener?.onItemClick(itemView, searchResultEvent, pos)
+                }
+            }
+
         }
     }
 }

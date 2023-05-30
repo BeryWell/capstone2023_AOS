@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="fitfume"
             type="com.example.fitfume.view.HomeFragment" />
@@ -19,15 +20,768 @@
         android:background="@color/light_grey"
         tools:context=".view.HomeFragment">
 
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/home_search_cl"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/home_search_background_drawable"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.145"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.862">
+
+            <TextView
+                android:id="@+id/home_search_title_tv"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:autoSizeMaxTextSize="17dp"
+                android:autoSizeMinTextSize="1dp"
+                android:autoSizeStepGranularity="1dp"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/pretendard_bold"
+                android:gravity="center_vertical"
+                android:lineSpacingExtra="3dp"
+                android:text="@string/home_search_title"
+                android:textColor="@color/white"
+                app:layout_constraintHeight_percent="0.25"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.368" />
+
+            <TextView
+                android:id="@+id/home_search_description_tv"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="5dp"
+                android:autoSizeMaxTextSize="11dp"
+                android:autoSizeMinTextSize="1dp"
+                android:autoSizeStepGranularity="1dp"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/pretendard_medium"
+                android:gravity="center_vertical"
+                android:lineSpacingExtra="4dp"
+                android:text="@string/home_search_description"
+                android:textColor="@color/white"
+                app:layout_constraintHeight_percent="0.33"
+                app:layout_constraintStart_toStartOf="@+id/home_search_title_tv"
+                app:layout_constraintTop_toBottomOf="@+id/home_search_title_tv"
+                app:layout_constraintWidth_percent="0.35" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="16dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/home_search_img"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.792"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.229" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <TextView
+            android:id="@+id/home_recommned_mbti_tv"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="17dp"
+            android:autoSizeMaxTextSize="12dp"
+            android:autoSizeMinTextSize="1dp"
+            android:autoSizeStepGranularity="1dp"
+            android:autoSizeTextType="uniform"
+            android:fontFamily="@font/pretendard_bold"
+            android:gravity="center_vertical"
+            android:lineSpacingExtra="8sp"
+            android:text="@string/home_recommend_mbti"
+            android:textColor="@color/black"
+            app:layout_constraintHeight_percent="0.035"
+            app:layout_constraintStart_toStartOf="@+id/home_search_cl"
+            app:layout_constraintTop_toBottomOf="@+id/home_search_cl"
+            app:layout_constraintWidth_percent="0.6" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/home_recommend_mbti_e_cl"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/login_background_drawable"
+            android:elevation="2dp"
+            app:layout_constraintEnd_toStartOf="@+id/home_recommend_mbti_s_cl"
+            app:layout_constraintHeight_percent="0.04734"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="@+id/home_recommned_mbti_tv"
+            app:layout_constraintTop_toBottomOf="@+id/home_recommned_mbti_tv"
+            app:layout_constraintWidth_percent="0.203">
+
+            <TextView
+                android:id="@+id/home_recommend_mbti_e_tv"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="10dp"
+                android:autoSizeMaxTextSize="21dp"
+                android:autoSizeMinTextSize="1dp"
+                android:autoSizeStepGranularity="1dp"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/pretendard_bold"
+                android:gravity="center_vertical|center_horizontal"
+                android:lineSpacingExtra="1sp"
+                android:text="@string/e"
+                android:textColor="@color/main_Color"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHeight_percent="0.85"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.14" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/home_recommend_mbti_context_cl"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="4.5dp"
+                android:layout_marginEnd="3dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.55"
+                app:layout_constraintStart_toEndOf="@+id/home_recommend_mbti_e_tv"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/home_recommend_mbti_e_top_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:autoSizeMaxTextSize="7dp"
+                    android:autoSizeMinTextSize="0.5dp"
+                    android:autoSizeStepGranularity="0.5dp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/pretendard_semibold"
+                    android:lineSpacingExtra="13sp"
+                    android:text="@string/mbti_e_top"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_percent="0.462"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/home_recommend_mbti_e_bottom_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:autoSizeMaxTextSize="7dp"
+                    android:autoSizeMinTextSize="0.5dp"
+                    android:autoSizeStepGranularity="0.5dp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/pretendard_semibold"
+                    android:lineSpacingExtra="13sp"
+                    android:text="@string/mbti_e_bottom"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_percent="0.462"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/home_recommend_mbti_s_cl"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/login_background_drawable"
+            android:elevation="2dp"
+            app:layout_constraintEnd_toStartOf="@id/home_recommend_mbti_t_cl"
+            app:layout_constraintHeight_percent="0.04734"
+            app:layout_constraintStart_toEndOf="@+id/home_recommend_mbti_e_cl"
+            app:layout_constraintTop_toBottomOf="@+id/home_recommned_mbti_tv"
+            app:layout_constraintWidth_percent="0.203">
+
+            <TextView
+                android:id="@+id/home_recommend_mbti_s_tv"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="10dp"
+                android:autoSizeMaxTextSize="21dp"
+                android:autoSizeMinTextSize="1dp"
+                android:autoSizeStepGranularity="1dp"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/pretendard_bold"
+                android:gravity="center_vertical|center_horizontal"
+                android:lineSpacingExtra="1sp"
+                android:text="@string/s"
+                android:textColor="@color/mbti_second"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHeight_percent="0.85"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.14" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/home_recommend_mbti_s_context_cl"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="4.5dp"
+                android:layout_marginEnd="3dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.55"
+                app:layout_constraintStart_toEndOf="@+id/home_recommend_mbti_s_tv"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/home_recommend_mbti_s_top_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:autoSizeMaxTextSize="7dp"
+                    android:autoSizeMinTextSize="0.5dp"
+                    android:autoSizeStepGranularity="0.5dp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/pretendard_semibold"
+                    android:lineSpacingExtra="13sp"
+                    android:text="@string/mbti_s_top"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_percent="0.462"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/home_recommend_mbti_s_bottom_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:autoSizeMaxTextSize="7dp"
+                    android:autoSizeMinTextSize="0.5dp"
+                    android:autoSizeStepGranularity="0.5dp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/pretendard_semibold"
+                    android:lineSpacingExtra="13sp"
+                    android:text="@string/mbti_s_bottom"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_percent="0.462"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/home_recommend_mbti_t_cl"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/login_background_drawable"
+            android:elevation="2dp"
+            app:layout_constraintEnd_toStartOf="@id/home_recommend_mbti_j_cl"
+            app:layout_constraintHeight_percent="0.04734"
+            app:layout_constraintStart_toEndOf="@+id/home_recommend_mbti_s_cl"
+            app:layout_constraintTop_toBottomOf="@+id/home_recommned_mbti_tv"
+            app:layout_constraintWidth_percent="0.203">
+
+            <TextView
+                android:id="@+id/home_recommend_mbti_t_tv"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="10dp"
+                android:autoSizeMaxTextSize="21dp"
+                android:autoSizeMinTextSize="1dp"
+                android:autoSizeStepGranularity="1dp"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/pretendard_bold"
+                android:gravity="center_vertical|center_horizontal"
+                android:lineSpacingExtra="1sp"
+                android:text="@string/t"
+                android:textColor="@color/mbti_third"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHeight_percent="0.85"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.14" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/home_recommend_mbti_t_context_cl"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="4.5dp"
+                android:layout_marginEnd="3dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.55"
+                app:layout_constraintStart_toEndOf="@+id/home_recommend_mbti_t_tv"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/home_recommend_mbti_t_top_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:autoSizeMaxTextSize="7dp"
+                    android:autoSizeMinTextSize="0.5dp"
+                    android:autoSizeStepGranularity="0.5dp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/pretendard_semibold"
+                    android:lineSpacingExtra="13sp"
+                    android:text="@string/mbti_t_top"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_percent="0.462"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/home_recommend_mbti_t_bottom_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:autoSizeMaxTextSize="7dp"
+                    android:autoSizeMinTextSize="0.5dp"
+                    android:autoSizeStepGranularity="0.5dp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/pretendard_semibold"
+                    android:lineSpacingExtra="13sp"
+                    android:text="@string/mbti_t_bottom"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_percent="0.462"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/home_recommend_mbti_j_cl"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/login_background_drawable"
+            android:elevation="2dp"
+            app:layout_constraintEnd_toEndOf="@id/home_search_cl"
+            app:layout_constraintHeight_percent="0.04734"
+            app:layout_constraintStart_toEndOf="@+id/home_recommend_mbti_t_cl"
+            app:layout_constraintTop_toBottomOf="@+id/home_recommned_mbti_tv"
+            app:layout_constraintWidth_percent="0.203">
+
+            <TextView
+                android:id="@+id/home_recommend_mbti_j_tv"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="10dp"
+                android:autoSizeMaxTextSize="21dp"
+                android:autoSizeMinTextSize="1dp"
+                android:autoSizeStepGranularity="1dp"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/pretendard_bold"
+                android:gravity="center_vertical|center_horizontal"
+                android:lineSpacingExtra="1sp"
+                android:text="@string/j"
+                android:textColor="@color/mbti_fourth"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHeight_percent="0.85"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.14" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/home_recommend_mbti_j_context_cl"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="4.5dp"
+                android:layout_marginEnd="3dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.55"
+                app:layout_constraintStart_toEndOf="@+id/home_recommend_mbti_j_tv"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/home_recommend_mbti_j_top_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:autoSizeMaxTextSize="7dp"
+                    android:autoSizeMinTextSize="0.5dp"
+                    android:autoSizeStepGranularity="0.5dp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/pretendard_semibold"
+                    android:lineSpacingExtra="13sp"
+                    android:text="@string/mbti_j_top"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_percent="0.462"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/home_recommend_mbti_j_bottom_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:autoSizeMaxTextSize="7dp"
+                    android:autoSizeMinTextSize="0.5dp"
+                    android:autoSizeStepGranularity="0.5dp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/pretendard_semibold"
+                    android:lineSpacingExtra="13sp"
+                    android:text="@string/mbti_j_bottom"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_percent="0.462"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/home_recommend_mbti_i_cl"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/login_background_drawable"
+            android:elevation="2dp"
+            app:layout_constraintEnd_toStartOf="@+id/home_recommend_mbti_n_cl"
+            app:layout_constraintHeight_percent="0.04734"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="@+id/home_recommned_mbti_tv"
+            app:layout_constraintTop_toBottomOf="@+id/home_recommend_mbti_e_cl"
+            app:layout_constraintWidth_percent="0.203">
+
+            <TextView
+                android:id="@+id/home_recommend_mbti_i_tv"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="10dp"
+                android:autoSizeMaxTextSize="21dp"
+                android:autoSizeMinTextSize="1dp"
+                android:autoSizeStepGranularity="1dp"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/pretendard_bold"
+                android:gravity="center_vertical|center_horizontal"
+                android:lineSpacingExtra="1sp"
+                android:text="@string/i"
+                android:textColor="@color/main_Color"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHeight_percent="0.85"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.14" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/home_recommend_mbti_context_i_cl"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="4.5dp"
+                android:layout_marginEnd="3dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.55"
+                app:layout_constraintStart_toEndOf="@+id/home_recommend_mbti_i_tv"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/home_recommend_mbti_i_top_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:autoSizeMaxTextSize="7dp"
+                    android:autoSizeMinTextSize="0.5dp"
+                    android:autoSizeStepGranularity="0.5dp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/pretendard_semibold"
+                    android:lineSpacingExtra="13sp"
+                    android:text="@string/mbti_i_top"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_percent="0.462"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/home_recommend_mbti_i_bottom_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:autoSizeMaxTextSize="7dp"
+                    android:autoSizeMinTextSize="0.5dp"
+                    android:autoSizeStepGranularity="0.5dp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/pretendard_semibold"
+                    android:lineSpacingExtra="13sp"
+                    android:text="@string/mbti_i_bottom"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_percent="0.462"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/home_recommend_mbti_n_cl"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/login_background_drawable"
+            android:elevation="2dp"
+            app:layout_constraintEnd_toStartOf="@id/home_recommend_mbti_f_cl"
+            app:layout_constraintHeight_percent="0.04734"
+            app:layout_constraintStart_toEndOf="@+id/home_recommend_mbti_i_cl"
+            app:layout_constraintTop_toBottomOf="@+id/home_recommend_mbti_s_cl"
+            app:layout_constraintWidth_percent="0.203">
+
+            <TextView
+                android:id="@+id/home_recommend_mbti_n_tv"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="10dp"
+                android:autoSizeMaxTextSize="19dp"
+                android:autoSizeMinTextSize="1dp"
+                android:autoSizeStepGranularity="0.5dp"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/pretendard_bold"
+                android:gravity="center_vertical|center_horizontal"
+                android:lineSpacingExtra="1sp"
+                android:text="@string/n"
+                android:textColor="@color/mbti_second"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHeight_percent="0.85"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.14" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/home_recommend_mbti_n_context_cl"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="4.5dp"
+                android:layout_marginEnd="3dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.55"
+                app:layout_constraintStart_toEndOf="@+id/home_recommend_mbti_n_tv"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/home_recommend_mbti_n_top_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:autoSizeMaxTextSize="7dp"
+                    android:autoSizeMinTextSize="0.5dp"
+                    android:autoSizeStepGranularity="0.5dp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/pretendard_semibold"
+                    android:lineSpacingExtra="13sp"
+                    android:text="@string/mbti_n_top"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_percent="0.462"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/home_recommend_mbti_n_bottom_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:autoSizeMaxTextSize="7dp"
+                    android:autoSizeMinTextSize="0.5dp"
+                    android:autoSizeStepGranularity="0.5dp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/pretendard_semibold"
+                    android:lineSpacingExtra="13sp"
+                    android:text="@string/mbti_n_bottom"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_percent="0.462"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/home_recommend_mbti_f_cl"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/login_background_drawable"
+            android:elevation="2dp"
+            app:layout_constraintEnd_toStartOf="@id/home_recommend_mbti_p_cl"
+            app:layout_constraintHeight_percent="0.04734"
+            app:layout_constraintStart_toEndOf="@+id/home_recommend_mbti_n_cl"
+            app:layout_constraintTop_toBottomOf="@+id/home_recommend_mbti_t_cl"
+            app:layout_constraintWidth_percent="0.203">
+
+            <TextView
+                android:id="@+id/home_recommend_mbti_f_tv"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="10dp"
+                android:autoSizeMaxTextSize="21dp"
+                android:autoSizeMinTextSize="1dp"
+                android:autoSizeStepGranularity="1dp"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/pretendard_bold"
+                android:gravity="center_vertical|center_horizontal"
+                android:lineSpacingExtra="1sp"
+                android:text="@string/f"
+                android:textColor="@color/mbti_third"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHeight_percent="0.85"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.14" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/home_recommend_mbti_f_context_cl"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="4.5dp"
+                android:layout_marginEnd="3dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.55"
+                app:layout_constraintStart_toEndOf="@+id/home_recommend_mbti_f_tv"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/home_recommend_mbti_f_top_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:autoSizeMaxTextSize="7dp"
+                    android:autoSizeMinTextSize="0.5dp"
+                    android:autoSizeStepGranularity="0.5dp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/pretendard_semibold"
+                    android:lineSpacingExtra="13sp"
+                    android:text="@string/mbti_f_top"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_percent="0.462"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/home_recommend_mbti_f_bottom_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:autoSizeMaxTextSize="7dp"
+                    android:autoSizeMinTextSize="0.5dp"
+                    android:autoSizeStepGranularity="0.5dp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/pretendard_semibold"
+                    android:lineSpacingExtra="13sp"
+                    android:text="@string/mbti_f_bottom"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_percent="0.462"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/home_recommend_mbti_p_cl"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/login_background_drawable"
+            android:elevation="2dp"
+            app:layout_constraintEnd_toEndOf="@id/home_search_cl"
+            app:layout_constraintHeight_percent="0.04734"
+            app:layout_constraintStart_toEndOf="@+id/home_recommend_mbti_f_cl"
+            app:layout_constraintTop_toBottomOf="@+id/home_recommend_mbti_j_cl"
+            app:layout_constraintWidth_percent="0.203">
+
+            <TextView
+                android:id="@+id/home_recommend_mbti_p_tv"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="10dp"
+                android:autoSizeMaxTextSize="19dp"
+                android:autoSizeMinTextSize="1dp"
+                android:autoSizeStepGranularity="1dp"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/pretendard_bold"
+                android:gravity="center_vertical|center_horizontal"
+                android:lineSpacingExtra="1sp"
+                android:text="@string/p"
+                android:textColor="@color/mbti_fourth"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHeight_percent="0.85"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.14" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/home_recommend_mbti_p_context_cl"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="4.5dp"
+                android:layout_marginEnd="3dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.55"
+                app:layout_constraintStart_toEndOf="@+id/home_recommend_mbti_p_tv"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/home_recommend_mbti_p_top_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:autoSizeMaxTextSize="7dp"
+                    android:autoSizeMinTextSize="0.5dp"
+                    android:autoSizeStepGranularity="0.5dp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/pretendard_semibold"
+                    android:lineSpacingExtra="13sp"
+                    android:text="@string/mbti_p_top"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_percent="0.462"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/home_recommend_mbti_p_bottom_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:autoSizeMaxTextSize="7dp"
+                    android:autoSizeMinTextSize="0.5dp"
+                    android:autoSizeStepGranularity="0.5dp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/pretendard_semibold"
+                    android:lineSpacingExtra="13sp"
+                    android:text="@string/mbti_p_bottom"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_percent="0.462"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cs_event_banner_cl"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintHeight_percent="0.29"
+            android:layout_marginTop="15dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.17234"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
+            app:layout_constraintTop_toBottomOf="@+id/home_recommend_mbti_p_cl">
 
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/cs_event_banner_vp"
@@ -115,99 +869,52 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/home_search_cl"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintWidth_percent="0.862"
-            app:layout_constraintHeight_percent="0.145"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/home_search_background_drawable"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cs_event_banner_cl">
-
-            <TextView
-                android:id="@+id/home_search_title_tv"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layout_constraintWidth_percent="0.368"
-                app:layout_constraintHeight_percent="0.25"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:text="@string/home_search_title"
-                android:autoSizeTextType="uniform"
-                android:autoSizeMinTextSize="1dp"
-                android:autoSizeStepGranularity="1dp"
-                android:autoSizeMaxTextSize="17dp"
-                android:gravity="center_vertical"
-                android:fontFamily="@font/pretendard_bold"
-                android:textColor="@color/white"
-                android:lineSpacingExtra="3dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
-
-            <TextView
-                android:id="@+id/home_search_description_tv"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layout_constraintWidth_percent="0.35"
-                app:layout_constraintHeight_percent="0.33"
-                android:text="@string/home_search_description"
-                android:textColor="@color/white"
-                android:fontFamily="@font/pretendard_medium"
-                android:autoSizeMaxTextSize="11dp"
-                android:autoSizeStepGranularity="1dp"
-                android:autoSizeMinTextSize="1dp"
-                android:autoSizeTextType="uniform"
-                android:layout_marginTop="5dp"
-                android:gravity="center_vertical"
-                android:lineSpacingExtra="4dp"
-                app:layout_constraintStart_toStartOf="@+id/home_search_title_tv"
-                app:layout_constraintTop_toBottomOf="@+id/home_search_title_tv" />
-
-            <ImageView
-                android:layout_width="0dp"
-                app:layout_constraintWidth_percent="0.229"
-                app:layout_constraintHeight_percent="0.792"
-                android:adjustViewBounds="true"
-                android:layout_height="0dp"
-                android:src="@drawable/home_search_img"
-                android:layout_marginEnd="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
         <TextView
-            android:id="@+id/home_best_perfume_tv"
+            android:id="@+id/home_best_perfume_top_tv"
             android:layout_width="0dp"
-            app:layout_constraintWidth_percent="0.3"
-            app:layout_constraintHeight_percent="0.03"
             android:layout_height="0dp"
-            android:text="@string/home_best_perfume"
-            android:textColor="@color/black"
-            android:autoSizeMaxTextSize="14dp"
-            android:autoSizeTextType="uniform"
+            android:layout_marginTop="15dp"
+            android:autoSizeMaxTextSize="12dp"
             android:autoSizeMinTextSize="1dp"
             android:autoSizeStepGranularity="1dp"
+            android:autoSizeTextType="uniform"
             android:fontFamily="@font/pretendard_semibold"
-            android:layout_marginTop="15dp"
+            android:gravity="center_vertical"
+            android:text="@string/home_best_perfume_top"
+            android:textColor="@color/black"
+            app:layout_constraintHeight_percent="0.0284"
             app:layout_constraintStart_toStartOf="@+id/home_search_cl"
-            app:layout_constraintTop_toBottomOf="@+id/home_search_cl"/>
-        
+            app:layout_constraintTop_toBottomOf="@+id/cs_event_banner_cl"
+            app:layout_constraintWidth_percent="0.37" />
+
+        <TextView
+            android:id="@+id/home_best_perfume_bottom_tv"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:autoSizeMaxTextSize="14dp"
+            android:autoSizeMinTextSize="1dp"
+            android:autoSizeStepGranularity="1dp"
+            android:autoSizeTextType="uniform"
+            android:fontFamily="@font/pretendard_semibold"
+            android:gravity="center_vertical"
+            android:text="@string/home_best_perfume_bottom"
+            android:textColor="@color/black"
+            app:layout_constraintHeight_percent="0.03219"
+            app:layout_constraintStart_toStartOf="@+id/home_search_cl"
+            app:layout_constraintTop_toBottomOf="@+id/home_best_perfume_top_tv"
+            app:layout_constraintWidth_percent="0.37" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/home_best_perfume_rv"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintWidth_percent="0.931"
-            app:layout_constraintHeight_percent="0.25"
-            android:layout_marginTop="5dp"
-            tools:listitem="@layout/item_best_perfume"
+            android:layout_marginTop="10dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/home_best_perfume_tv"/>
+            app:layout_constraintHeight_percent="0.25"
+            app:layout_constraintTop_toBottomOf="@+id/home_best_perfume_bottom_tv"
+            app:layout_constraintWidth_percent="0.931"
+            tools:listitem="@layout/item_best_perfume" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
