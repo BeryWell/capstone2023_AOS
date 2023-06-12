@@ -9,7 +9,6 @@ import io.reactivex.Single
 import retrofit2.http.*
 
 interface  ApiInterface {
-
     //ChatGPT POST
     @POST("chat/completions")
     fun getChatAnswer(@Body request: GptRequest): Single<GptResponse>

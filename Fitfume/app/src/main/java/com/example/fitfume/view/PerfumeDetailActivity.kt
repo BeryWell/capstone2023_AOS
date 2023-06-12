@@ -6,6 +6,7 @@ import android.util.Log
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
 import com.example.fitfume.R
 import com.example.fitfume.adapter.PerfumeReviewRecyclerViewAdapter
 import com.example.fitfume.databinding.ActivityPerfumeDetailBinding
@@ -56,6 +57,15 @@ class PerfumeDetailActivity : AppCompatActivity() {
         val topNotes = intent.getStringExtra("topNotes")
         val middleNotes = intent.getStringExtra("middleNotes")
         val baseNotes = intent.getStringExtra("baseNotes")
+        val imgUrl = intent.getStringExtra("imgUrl")
+
+        val regexPattern = Regex("http://www.basenotes.net/photos/products/(\\w+|\\d+)/(\\d+(-\\d+)?)\\.jpg")
+        val convertedUrl = imgUrl!!.replace(regexPattern, "https://basenotes.com/img/product/$2-j")
+        Log.d("lhj", "onCreate: $convertedUrl")
+        Glide.with(this)
+            .load(convertedUrl)
+            .error(R.drawable.recommend_question_four_three)
+            .into(binding.perfumeImageIv)
 
         binding.perfumeBrandTv.text = intentBrand
         binding.perfumeNameTv.text = intentTitle

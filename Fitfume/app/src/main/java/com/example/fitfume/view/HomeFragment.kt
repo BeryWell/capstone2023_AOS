@@ -50,59 +50,6 @@ class HomeFragment : Fragment() {
 
         bestPerfumeRecyclerViewAdapter.submitBestPerfumeEventList(list)
 
-
-//        val mbtiI = binding.homeRecommendMbtiICl
-//        val mbtiE = binding.homeRecommendMbtiECl
-//
-//        val mbtiN = binding.homeRecommendMbtiNCl
-//        val mbtiS = binding.homeRecommendMbtiSCl
-//
-//        val mbtiF = binding.homeRecommendMbtiFCl
-//        val mbtiT = binding.homeRecommendMbtiTCl
-//
-//        val mbtiP = binding.homeRecommendMbtiPCl
-//        val mbtiJ = binding.homeRecommendMbtiJCl
-//
-//        mbtiI.setOnClickListener {
-//            mbtiI.isSelected = true
-//            mbtiE.isSelected = false
-//        }
-//
-//        mbtiE.setOnClickListener {
-//            mbtiI.isSelected = false
-//            mbtiE.isSelected = true
-//        }
-//
-//        mbtiN.setOnClickListener {
-//            mbtiN.isSelected = true
-//            mbtiS.isSelected = false
-//        }
-//
-//        mbtiS.setOnClickListener {
-//            mbtiN.isSelected = false
-//            mbtiS.isSelected = true
-//        }
-//
-//        mbtiF.setOnClickListener {
-//            mbtiF.isSelected = true
-//            mbtiT.isSelected = false
-//        }
-//
-//        mbtiT.setOnClickListener {
-//            mbtiF.isSelected = false
-//            mbtiT.isSelected = true
-//        }
-//
-//        mbtiP.setOnClickListener {
-//            mbtiP.isSelected = true
-//            mbtiJ.isSelected = false
-//        }
-//
-//        mbtiJ.setOnClickListener {
-//            mbtiP.isSelected = false
-//            mbtiJ.isSelected = true
-//        }
-
         val mbtiOptions = listOf(
             Pair(binding.homeRecommendMbtiICl, binding.homeRecommendMbtiECl),
             Pair(binding.homeRecommendMbtiNCl, binding.homeRecommendMbtiSCl),

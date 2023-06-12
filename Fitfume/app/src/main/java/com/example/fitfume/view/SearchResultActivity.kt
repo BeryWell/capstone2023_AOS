@@ -32,6 +32,7 @@ class SearchResultActivity : AppCompatActivity() {
         var topNotes = ""
         var middleNotes = ""
         var baseNotes = ""
+        var imgUrl = ""
         binding.searchResultRv.adapter = searchResultRecyclerViewAdapter
 
         var list: MutableList<SearchResultEvent> = mutableListOf()
@@ -74,6 +75,8 @@ class SearchResultActivity : AppCompatActivity() {
                     baseNotes += "${it.korName}  "
                 }
             }
+
+            imgUrl = it.imgUrl
         })
 
         searchResultRecyclerViewAdapter.submitSearchResultEventList(list)
@@ -90,6 +93,7 @@ class SearchResultActivity : AppCompatActivity() {
                     intent.putExtra("topNotes", topNotes)
                     intent.putExtra("middleNotes", middleNotes)
                     intent.putExtra("baseNotes", baseNotes)
+                    intent.putExtra("imgUrl", imgUrl)
                     startActivity(intent)
                 }
             }

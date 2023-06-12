@@ -71,7 +71,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_marginBottom="20dp"
-                tools:listitem="@layout/item_my_review" />
+                tools:listitem="@layout/item_search_result" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
