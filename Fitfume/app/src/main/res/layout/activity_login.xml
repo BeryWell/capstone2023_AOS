@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_grey"
+    tools:context=".view.LoginActivity">
+
+    <ImageView
+        android:id="@+id/login_icon_iv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="35dp"
+        android:src="@drawable/icon_app_title_drawable"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.035"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.32" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/login_user_input_cl"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="40.4dp"
+        android:background="@drawable/login_background_drawable"
+        android:elevation="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.227"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_icon_iv"
+        app:layout_constraintWidth_percent="0.862">
+
+        <TextView
+            android:id="@+id/login_email_tv"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:autoSizeMaxTextSize="13dp"
+            android:autoSizeMinTextSize="1dp"
+            android:autoSizeStepGranularity="1dp"
+            android:autoSizeTextType="uniform"
+            android:fontFamily="@font/pretendard_medium"
+            android:text="@string/email_context"
+            android:textColor="@color/black"
+            app:layout_constraintHeight_percent="0.09"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.113" />
+
+        <EditText
+            android:id="@+id/login_email_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/pretendard_medium"
+            android:lineSpacingExtra="5dp"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="13dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_email_tv" />
+
+        <TextView
+            android:id="@+id/login_pw_tv"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:autoSizeMaxTextSize="13dp"
+            android:autoSizeMinTextSize="1dp"
+            android:autoSizeStepGranularity="1dp"
+            android:autoSizeTextType="uniform"
+            android:fontFamily="@font/pretendard_medium"
+            android:text="@string/pw_context"
+            android:textColor="@color/black"
+            app:layout_constraintHeight_percent="0.09"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_email_et"
+            app:layout_constraintWidth_percent="0.113" />
+
+        <EditText
+            android:id="@+id/login_pw_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/pretendard_medium"
+            android:lineSpacingExtra="5dp"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="13dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_pw_tv" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/login_search_cl"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/login_user_input_cl"
+        app:layout_constraintHeight_percent="0.022"
+        app:layout_constraintTop_toBottomOf="@+id/login_user_input_cl"
+        app:layout_constraintWidth_percent="0.348">
+
+        <TextView
+            android:id="@+id/login_search_id_tv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:autoSizeMaxTextSize="11dp"
+            android:autoSizeMinTextSize="1dp"
+            android:autoSizeStepGranularity="1dp"
+            android:autoSizeTextType="uniform"
+            android:fontFamily="@font/pretendard_medium"
+            android:gravity="center_horizontal"
+            android:text="@string/search_Id"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/login_search_slash_tv"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.4" />
+
+        <TextView
+            android:id="@+id/login_search_slash_tv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:autoSizeMaxTextSize="11dp"
+            android:autoSizeMinTextSize="1dp"
+            android:autoSizeTextType="uniform"
+            android:fontFamily="@font/pretendard_medium"
+            android:gravity="center_horizontal"
+            android:letterSpacing="0.01"
+            android:lineSpacingExtra="27dp"
+            android:text="@string/login_seach_slash"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/login_search_pw_tv"
+            app:layout_constraintStart_toEndOf="@+id/login_search_id_tv"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/login_search_pw_tv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:autoSizeMaxTextSize="11dp"
+            android:autoSizeMinTextSize="1dp"
+            android:autoSizeStepGranularity="1dp"
+            android:autoSizeTextType="uniform"
+            android:fontFamily="@font/pretendard_medium"
+            android:gravity="center_horizontal"
+            android:text="@string/search_pw"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/login_search_slash_tv"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.48" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/login_signUp_btn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="60dp"
+        android:autoSizeMaxTextSize="14dp"
+        android:autoSizeMinTextSize="1dp"
+        android:autoSizeStepGranularity="1dp"
+        android:autoSizeTextType="uniform"
+        android:background="@drawable/login_background_drawable"
+        android:fontFamily="@font/pretendard_semibold"
+        android:text="@string/sign_up_btn"
+        android:textColor="@color/main_Color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.073"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_search_cl"
+        app:layout_constraintWidth_percent="0.862" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/login_login_btn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="15dp"
+        android:autoSizeMaxTextSize="14dp"
+        android:autoSizeMinTextSize="1dp"
+        android:autoSizeStepGranularity="1dp"
+        android:autoSizeTextType="uniform"
+        android:background="@drawable/login_main_color_background_drawable"
+        android:fontFamily="@font/pretendard_semibold"
+        android:text="@string/login_btn"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.073"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_signUp_btn"
+        app:layout_constraintWidth_percent="0.862" />
+
+    <View
+        android:id="@+id/login_division"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="14.5dp"
+        android:background="#e5e5e5"
+        app:layout_constraintEnd_toEndOf="@+id/login_login_btn"
+        app:layout_constraintStart_toStartOf="@+id/login_login_btn"
+        app:layout_constraintTop_toBottomOf="@+id/login_login_btn"></View>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/login_kakao_btn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="15dp"
+        android:autoSizeMaxTextSize="14dp"
+        android:autoSizeMinTextSize="1dp"
+        android:autoSizeStepGranularity="1dp"
+        android:autoSizeTextType="uniform"
+        android:background="@drawable/login_kakao_background_drawable"
+        android:fontFamily="@font/pretendard_semibold"
+        android:text="@string/login_kakao_btn"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.073"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_division"
+        app:layout_constraintWidth_percent="0.862" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
