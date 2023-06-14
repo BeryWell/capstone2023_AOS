@@ -45,4 +45,5 @@ class PerfumeViewModel : ViewModel() {
             }
         )
     }
+
 }

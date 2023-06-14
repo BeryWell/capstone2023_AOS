@@ -30,4 +30,6 @@ class PerfumeRepositoryImpl: PerfumeRepository{
             .subscribeOn(Schedulers.computation())
             .observeOn(AndroidSchedulers.mainThread()).map { it }
     }
+
+
 }

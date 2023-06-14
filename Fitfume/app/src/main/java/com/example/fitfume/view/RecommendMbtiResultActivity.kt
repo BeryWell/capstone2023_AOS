@@ -42,6 +42,11 @@ class RecommendMbtiResultActivity : AppCompatActivity() {
 
     }
 
+    override fun onPause() {
+        super.onPause()
+        viewModel.gptText.removeObservers(this)
+    }
+
     fun sendChatGPT(text: String) {
         val model = "gpt-3.5-turbo"
         val request = GptRequest(

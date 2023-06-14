@@ -3,6 +3,7 @@ package com.example.fitfume.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
@@ -29,6 +30,7 @@ class SearchResultActivity : AppCompatActivity() {
         binding.searchResultRv.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
         val searchResultRecyclerViewAdapter = SearchResultRecyclerViewAdapter()
+        var id = 0.toLong()
         var topNotes = ""
         var middleNotes = ""
         var baseNotes = ""
@@ -77,6 +79,8 @@ class SearchResultActivity : AppCompatActivity() {
             }
 
             imgUrl = it.imgUrl
+            id = it.id
+            Log.d("lhjId", "id type??: ${it.id}")
         })
 
         searchResultRecyclerViewAdapter.submitSearchResultEventList(list)
@@ -94,6 +98,7 @@ class SearchResultActivity : AppCompatActivity() {
                     intent.putExtra("middleNotes", middleNotes)
                     intent.putExtra("baseNotes", baseNotes)
                     intent.putExtra("imgUrl", imgUrl)
+                    intent.putExtra("id", id.toString())
                     startActivity(intent)
                 }
             }

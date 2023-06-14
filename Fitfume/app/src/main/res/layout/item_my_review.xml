@@ -62,7 +62,7 @@
             app:layout_constraintEnd_toEndOf="@+id/review_division"
             app:layout_constraintHeight_percent="0.09"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintWidth_percent="0.23">
+            app:layout_constraintWidth_percent="0.4">
 
             <TextView
                 android:id="@+id/review_perfume_brand_tv"
@@ -74,13 +74,14 @@
                 android:autoSizeTextType="uniform"
                 android:fontFamily="@font/pretendard_medium"
                 android:text="Dior"
+                android:gravity="center_horizontal|center_vertical"
                 android:textColor="@color/review_perfume_name"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/review_perfume_division"
                 app:layout_constraintHorizontal_chainStyle="spread_inside"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintWidth_percent="0.2" />
+                app:layout_constraintWidth_percent="0.45" />
 
 
             <View
@@ -103,12 +104,13 @@
                 android:autoSizeTextType="uniform"
                 android:fontFamily="@font/pretendard_medium"
                 android:text="쟈도르 오드 퍼퓸"
+                android:gravity="center_horizontal|center_vertical"
                 android:textColor="@color/review_perfume_name"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/review_perfume_division"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintWidth_percent="0.676" />
+                app:layout_constraintWidth_percent="0.45" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -120,7 +122,7 @@
             app:layout_constraintHeight_percent="0.073"
             app:layout_constraintStart_toStartOf="@+id/review_division"
             app:layout_constraintTop_toBottomOf="@+id/review_user_nickname_tv"
-            app:layout_constraintWidth_percent="0.21">
+            app:layout_constraintWidth_percent="0.3">
 
             <TextView
                 android:id="@+id/review_user_sex_tv"
@@ -131,7 +133,7 @@
                 android:autoSizeStepGranularity="1dp"
                 android:autoSizeTextType="uniform"
                 android:fontFamily="@font/pretendard_medium"
-                android:gravity="center_horizontal"
+                android:gravity="center_vertical|center_horizontal"
                 android:lineSpacingExtra="11sp"
                 android:text="여성"
                 android:textColor="@color/review_perfume_name"
@@ -170,7 +172,7 @@
                 android:autoSizeStepGranularity="1dp"
                 android:autoSizeTextType="uniform"
                 android:fontFamily="@font/pretendard_medium"
-                android:gravity="center_horizontal"
+                android:gravity="center_vertical|center_horizontal"
                 android:lineSpacingExtra="11sp"
                 android:text="직장인"
                 android:textColor="@color/review_perfume_name"
@@ -210,6 +212,7 @@
                 android:fontFamily="@font/pretendard_medium"
                 android:lineSpacingExtra="11sp"
                 android:text="클래식"
+                android:gravity="center_vertical|center_horizontal"
                 android:textColor="@color/review_perfume_name"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
