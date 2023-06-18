@@ -1,5 +1,6 @@
 package com.example.fitfume.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -53,6 +54,9 @@ class CreateReviewActivity : AppCompatActivity() {
             val description = binding.perfumeReviewEt.text.toString()
 
             viewModel.createReview(CreateReviewRequest(description, style, gender, id, vitality, season))
+
+            val intent = Intent(this@CreateReviewActivity, HomeActivity::class.java)
+            startActivity(intent)
         }
     }
 
@@ -105,8 +109,7 @@ class CreateReviewActivity : AppCompatActivity() {
             binding.perfumeSeason1Cb,
             binding.perfumeSeason2Cb,
             binding.perfumeSeason3Cb,
-            binding.perfumeSeason4Cb,
-            binding.perfumeSeason5Cb
+            binding.perfumeSeason4Cb
         )
 
         seasonCheckboxes.forEachIndexed { index, checkbox ->
