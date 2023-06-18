@@ -3,11 +3,11 @@ import matplotlib.pyplot as plt
 import cv2
 import numpy as np
 
-f = open("C:/Users/kys/capstone2023_AOS/Fitfume/AI/yolov5/data/perfume/val/labels/val_datalist.txt")
+f = open("C:/Users/kys/capstone2023_AOS/Fitfume/AI/yolov5/data/perfume/train/labels/datalist.txt")
 lines = f.readlines()
 # name x1 y1 x1 y2 x2 y1 x2 y2 perfume
 
-for img in os.scandir('C:/Users/kys/capstone2023_AOS/Fitfume/AI/yolov5/data/perfume/val/images/'):
+for img in os.scandir('C:/Users/kys/capstone2023_AOS/Fitfume/AI/yolov5/data/perfume/train/images/'):
     save_name = ''
 
     name = img.name
@@ -20,7 +20,7 @@ for img in os.scandir('C:/Users/kys/capstone2023_AOS/Fitfume/AI/yolov5/data/perf
     print(img_info[0])
 
     # configuring path information
-    img_path = os.path.join('C:/Users/kys/capstone2023_AOS/Fitfume/AI/yolov5/data/perfume/val/images/', img.name)
+    img_path = os.path.join('C:/Users/kys/capstone2023_AOS/Fitfume/AI/yolov5/data/perfume/train/images/', img.name)
 
     # reading the image and the coordinates
     img = cv2.imread(img_path)
@@ -44,5 +44,5 @@ for img in os.scandir('C:/Users/kys/capstone2023_AOS/Fitfume/AI/yolov5/data/perf
 
     print(save_name)
 
-    save_path = os.path.join('C:/Users/kys/capstone2023_AOS/Fitfume/AI/Alignment_Model/alignment_input/val/', save_name)
+    save_path = os.path.join('C:/Users/kys/capstone2023_AOS/Fitfume/AI/Alignment_Model/alignment_input/train/', save_name)
     cv2.imwrite(save_path, img)
