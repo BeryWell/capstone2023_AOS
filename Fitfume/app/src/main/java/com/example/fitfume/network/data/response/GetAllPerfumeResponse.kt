@@ -10,5 +10,6 @@ data class GetAllPerfumeResponse(
     val fashionStyle: String,
     val description: String,
     val createdAt: String,
+    val rating: Float,
     val writeUser: ReviewUserInfo
 )

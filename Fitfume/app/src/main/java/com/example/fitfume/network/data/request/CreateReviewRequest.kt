@@ -6,5 +6,6 @@ data class CreateReviewRequest(
     val genderExpressionScale: Int,
     val perfumeId: Int,
     val perfumeVitality: Int,
-    val seasons: Int
+    val seasons: Int,
+    val rating: Int,
 )

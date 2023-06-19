@@ -52,8 +52,9 @@ class CreateReviewActivity : AppCompatActivity() {
         binding.perfumeGoToReviewBtn.setOnClickListener {
             Log.d("lhjFlag", "flag: $vitalityFlag $genderFlag $seasonFlag $styleFlag")
             val description = binding.perfumeReviewEt.text.toString()
+            val rating = binding.perfumeStartRb.rating.toInt()
 
-            viewModel.createReview(CreateReviewRequest(description, style, gender, id, vitality, season))
+            viewModel.createReview(CreateReviewRequest(description, style, gender, id, vitality, season, rating))
 
             val intent = Intent(this@CreateReviewActivity, HomeActivity::class.java)
             startActivity(intent)

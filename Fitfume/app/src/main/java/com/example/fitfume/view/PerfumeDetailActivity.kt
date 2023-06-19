@@ -40,18 +40,6 @@ class PerfumeDetailActivity : AppCompatActivity() {
         binding.perfumeReviewRv.adapter = bestPerfumeRecyclerViewAdapter
 
         var list: MutableList<PerfumeReviewEvent> = mutableListOf()
-//        list.add(PerfumeReviewEvent("lh99j", 0.0F))
-//        list.add(PerfumeReviewEvent("lh99j", 1.0F))
-//        list.add(PerfumeReviewEvent("lh99j", 2.0F))
-//        list.add(PerfumeReviewEvent("lh99j", 3.0F))
-//        list.add(PerfumeReviewEvent("lh99j", 4.0F))
-//        list.add(PerfumeReviewEvent("lh99j", 5.0F))
-//        list.add(PerfumeReviewEvent("lh99j", 5.0F))
-//        list.add(PerfumeReviewEvent("lh99j", 4.0F))
-//        list.add(PerfumeReviewEvent("lh99j", 3.0F))
-//        list.add(PerfumeReviewEvent("lh99j", 2.0F))
-//        list.add(PerfumeReviewEvent("lh99j", 1.0F))
-
 
         val intentBrand = intent.getStringExtra("brand")
         val intentTitle = intent.getStringExtra("title")
@@ -61,6 +49,7 @@ class PerfumeDetailActivity : AppCompatActivity() {
         val baseNotes = intent.getStringExtra("baseNotes")
         val imgUrl = intent.getStringExtra("imgUrl")
         val id = intent.getStringExtra("id")!!.toInt()
+        var reviewStar = intent.getStringExtra("reviewStar")
 
         val convertedUrl = convertImageUrl(imgUrl)
         loadImage(convertedUrl)
@@ -71,6 +60,8 @@ class PerfumeDetailActivity : AppCompatActivity() {
         binding.perfumeTopNoteInfoTv.text = topNotes
         binding.perfumeMiddleNoteInfoTv.text = middleNotes
         binding.perfumeBaseNoteInfoTv.text = baseNotes
+        binding.perfumeReviewGradeTv.text = reviewStar
+        binding.perfumeReviewGrade1Tv.text = reviewStar
 
         Log.d("lhj_purfumeDetail", "onCreate: $intentBrand $intentTitle $intentCount")
 
@@ -84,6 +75,7 @@ class PerfumeDetailActivity : AppCompatActivity() {
             var styleCount = 0
             var genderCount = 0
             var vitalityCount = 0
+
 
             if (it.isNotEmpty()) {
                 for (i in it.indices) {
@@ -176,7 +168,7 @@ class PerfumeDetailActivity : AppCompatActivity() {
                                 intentTitle!!,
                                 intentBrand!!,
                                 it[i].description,
-                                0.0f
+                                it[i].rating
                             )
                         )
                     }

@@ -3,6 +3,7 @@ package com.example.fitfume.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.IBinder
 import android.util.Log
 import android.view.View
 import androidx.activity.viewModels
@@ -15,10 +16,12 @@ import com.example.fitfume.databinding.ActivitySearchResultBinding
 import com.example.fitfume.model.PerfumeReviewEvent
 import com.example.fitfume.model.SearchResultEvent
 import com.example.fitfume.viewmodel.PerfumeViewModel
+import com.example.fitfume.viewmodel.ReviewViewModel
 
 class SearchResultActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySearchResultBinding
     private val viewModel: PerfumeViewModel by viewModels()
+    private val reviewViewModel: ReviewViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivitySearchResultBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
@@ -45,8 +48,10 @@ class SearchResultActivity : AppCompatActivity() {
 //        list.add(SearchResultEvent("Dior", "미스 디올 블루밍",4.0F, "10+"))
 //        list.add(SearchResultEvent("abcdefgha", "미스 디올 블루밍 부케 오드 뚜왈렛",5.0F, "2"))
 
-
         val perfumeName = intent.getStringExtra("name")
+        var reviewStar = 0.0F
+
+
         viewModel.findPerfumeByName(perfumeName!!)
 
         setSupportActionBar(binding.perfumeToolbar)
@@ -54,11 +59,9 @@ class SearchResultActivity : AppCompatActivity() {
 
         viewModel.perfumeByName.observe(this, Observer {
             list.clear()
-
-            list.add(SearchResultEvent(it.brand, it.name, 0.0F, "10+"))
+            list.add(SearchResultEvent(it.brand, it.name, 0.0F, "0"))
 
             binding.perfumeToolbar.title = it.name
-            searchResultRecyclerViewAdapter.submitSearchResultEventList(list)
 
             if(it.topNotes.isNotEmpty()){
                 it.topNotes.forEach{
@@ -81,7 +84,32 @@ class SearchResultActivity : AppCompatActivity() {
             imgUrl = it.imgUrl
             id = it.id
             Log.d("lhjId", "id type??: ${it.id}")
+
+            reviewViewModel.getAllReviewByPerfumeId(it.id.toInt())
         })
+
+        reviewViewModel.getAllPerfumeReview.observe(this, Observer {
+            var reviewtotalValue = 0
+
+            for(i in it.indices){
+                reviewtotalValue += it[i].rating.toInt()
+            }
+
+            var reviewAvg = reviewtotalValue / it.size
+
+            list[0].star = reviewAvg.toFloat()
+
+            if(it.size < 10){
+                list[0].count = it.size.toString()
+            }else{
+                list[0].count = "10+"
+            }
+
+            reviewStar = reviewAvg.toFloat()
+
+            searchResultRecyclerViewAdapter.submitSearchResultEventList(list)
+        })
+
 
         searchResultRecyclerViewAdapter.submitSearchResultEventList(list)
 
@@ -99,6 +127,7 @@ class SearchResultActivity : AppCompatActivity() {
                     intent.putExtra("baseNotes", baseNotes)
                     intent.putExtra("imgUrl", imgUrl)
                     intent.putExtra("id", id.toString())
+                    intent.putExtra("reviewStar", reviewStar.toInt().toString())
                     startActivity(intent)
                 }
             }
@@ -109,5 +138,6 @@ class SearchResultActivity : AppCompatActivity() {
     override fun onPause() {
         super.onPause()
         viewModel.perfumeByName.removeObservers(this)
+        reviewViewModel.getAllPerfumeReview.removeObservers(this)
     }
 }
