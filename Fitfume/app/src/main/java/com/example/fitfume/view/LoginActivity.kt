@@ -33,10 +33,10 @@ class LoginActivity : AppCompatActivity() {
         viewModel.isLoginSuccess.observe(this, Observer {
             if(it != ""){
                 val intent = Intent(this@LoginActivity, HomeActivity::class.java)
-                Toast.makeText(this, "로그인 성공!", Toast.LENGTH_LONG).show()
+//                Toast.makeText(this, "로그인 성공!", Toast.LENGTH_LONG).show()
                 startActivity(intent)
             }else{
-                Toast.makeText(this, "이메일 또는 비밀번호가 틀렸습니다.", Toast.LENGTH_LONG).show()
+//                Toast.makeText(this, "이메일 또는 비밀번호가 틀렸습니다.", Toast.LENGTH_LONG).show()
             }
         })
 
